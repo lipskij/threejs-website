@@ -152,9 +152,9 @@ nav li a:hover {
 
 .work h2 {
   font-size: 3rem;
-  padding: 5rem 0 5rem 0;
+  margin: 5rem 0 5rem 0;
 }
-
+/* triangle in bottom to scrool to home page */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
