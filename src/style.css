@@ -142,6 +142,21 @@ nav li a:hover {
   fill: #81f5af;
 }
 
+.git-btn {
+  border: 1px solid #81f5af;
+  border-radius: 5px;
+  padding: 1rem;
+  background: #0c0c0c;
+  transition-duration: 0.3s;
+}
+
+.git-btn:hover {
+  background: none;
+  transform: scale(1.1);
+  color: #0c0c0c;
+  transition-duration: 0.3s;
+}
+
 .work {
   display: flex;
   flex-direction: column;
