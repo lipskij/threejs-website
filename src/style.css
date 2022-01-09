@@ -99,6 +99,7 @@ nav li a:hover {
 .about {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   width: 60%;
   height: 100vh;
@@ -124,8 +125,11 @@ nav li a:hover {
   margin: 0 2rem 0 2rem;
 }
 
+
+
 .git-icon p {
-  padding-top: 3rem;
+  font-size: 1.3rem;
+  margin: 10rem 0 5rem 0;
 }
 
 .git-icon svg {
