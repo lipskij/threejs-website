@@ -119,11 +119,25 @@ nav li a:hover {
 }
 
 .icons {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .icons svg {
   margin: 0 2rem 0 2rem;
+}
+
+.git-icon p {
+  padding-top: 3rem;
+}
+
+.git-icon svg {
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.git-icon svg:hover {
+  transition-duration: 0.3s;
+  fill: #81f5af;
 }
 
 .work {
@@ -174,7 +188,7 @@ nav li a:hover {
 }
 
 .image-two {
-  background-image: url(assets/images/bcd6eb282dca8be32612cc0a42cc36dc.png);
+  background-image: url(assets/images/ac3c0cc26d4dda5693a6f59b96cbd004.webp);
   background-size: contain;
   width: 470px;
   height: 312px;

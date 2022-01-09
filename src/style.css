@@ -172,13 +172,6 @@ nav li a:hover {
   padding-top: 4rem;
 }
 
-.image-one {
-  background-image: url("/static/images/send-money.png");
-  background-size: contain;
-  width: 470px;
-  height: 293px;
-  cursor: pointer;
-}
 .gallery div {
   transition-duration: 0.3s;
 }
@@ -187,8 +180,32 @@ nav li a:hover {
   transition-duration: 0.3s;
 }
 
+.image-one {
+  background-image: url("/static/images/send-money.webp");
+  background-image: -webkit-image-set(
+    url("/static/images/send-money.webp") type("image/webp"),
+    url("/static/images/send-money.png") type("image/png")
+  );
+  background-image: image-set(
+    url("/static/images/send-money.webp") type("image/webp"),
+    url("/static/images/send-money.png") type("image/png")
+  );
+  background-size: contain;
+  width: 470px;
+  height: 293px;
+  cursor: pointer;
+}
+
 .image-two {
-  background-image: url("/static/images/ski.png");
+  background-image: url("/static/images/ski.webp");
+  background-image: -webkit-image-set(
+    url("/static/images/ski.webp") type("image/webp"),
+    url("/static/images/ski.png") type("image/png")
+  );
+  background-image: image-set(
+    url("/static/images/ski.webp") type("image/webp"),
+    url("/static/images/ski.png") type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
@@ -196,7 +213,15 @@ nav li a:hover {
 }
 
 .image-three {
-  background-image: url("/static/images/vaskichi.png");
+  background-image: url("/static/images/vaskichi.webp");
+  background-image: -webkit-image-set(
+    url("/static/images/vaskichi.webp") type("image/webp"),
+    url("/static/images/vaskichi.png") type("image/png")
+  );
+  background-image: image-set(
+    url("/static/images/vaskichi.webp") type("image/webp"),
+    url("/static/images/vaskichi.png") type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
@@ -204,7 +229,15 @@ nav li a:hover {
 }
 
 .image-four {
-  background-image: url("/static/images/next-js.png");
+  background-image: url("/static/images/next-js.webp");
+  background-image: -webkit-image-set(
+    url("/static/images/next-js.webp") type("image/webp"),
+    url("/static/images/next-js.png") type("image/png")
+  );
+  background-image: image-set(
+    url("/static/images/next-js.webp") type("image/webp"),
+    url("/static/images/next-js.png") type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
