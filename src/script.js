@@ -273,7 +273,7 @@ fontsLoader.load("/fonts/font.json", (font) => {
   scene.add(text, textTwo, button, smiley);
 
   const sphereGeometry = new THREE.SphereGeometry(0.1, 32, 16);
-  const spehereMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  const spehereMaterial = new THREE.MeshBasicMaterial({ color: 0x81f5af });
 
   // Spheres aka stars
   for (let i = 0; i < 500; i++) {
