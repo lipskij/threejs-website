@@ -95,10 +95,10 @@ function onMouseClick(event) {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  const x = event.pageX;
-  const y = event.pageY;
+  const x = event.pageX / window.innerWidth;
+  const y = event.pageY / window.innerHeight;
 
-  if (x > 450 && x < 990 && y > 620 && y < 830) {
+  if (x > 0.2 && x < 0.8 && y > 0.6 && y < 0.8) {
     window.scrollTo(0, "2000");
   }
 }
