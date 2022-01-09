@@ -114,14 +114,14 @@ function onTouchEnd(e) {
   // Adjust for big phones
   if (mobileHeight > 790 && mobileHeight < 890) {
     if (x > 35 && x < 350 && y > 550 && y < 670) {
-      window.scrollTo(0, "2000");
+      window.scrollTo(0, "2155");
     }
   }
 
   // Adjust for small phones
   if (mobileHeight > 500 && mobileHeight < 600) {
     if (x > 50 && x < 280 && y > 400 && y < 470) {
-      window.scrollTo(0, "1800");
+      window.scrollTo(0, "1950");
     }
   }
 }
