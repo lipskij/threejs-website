@@ -199,7 +199,7 @@ fontsLoader.load("/fonts/font.json", (font) => {
   );
 
   // Text over button
-  const buttonText = new THREE.TextBufferGeometry("WELCOME", {
+  const buttonText = new THREE.TextBufferGeometry("W E L C O M E", {
     font: font,
     size: mobilesSize ? 0.2 : 0.3,
     height: 0.2,
