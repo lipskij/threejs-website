@@ -73,6 +73,29 @@ nav li a:hover {
   transition-duration: 0.3s;
 }
 
+.triangle-left:hover {
+  border-left: 70px solid #c665df;
+  transition-duration: 0.3s;
+}
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  border-right: 60px solid #81f5af;
+  transition-duration: 0.3s;
+}
+
+.triangle-right:hover {
+  border-right: 70px solid #c665df;
+  /* transform: translateX(10px); */
+  transition-duration: 0.3s;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -142,6 +165,10 @@ nav li a:hover {
   transition-duration: 0.3s;
 }
 
+.gallery a {
+  width: 400px;
+}
+
 .gallery p {
   font-size: 1.3rem;
   padding-top: 4rem;
@@ -153,10 +180,6 @@ nav li a:hover {
 .gallery div:hover {
   transform: rotate(5deg);
   transition-duration: 0.3s;
-}
-
-.gallery a {
-  width: 400px;
 }
 
 .image-one {
