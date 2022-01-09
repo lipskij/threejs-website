@@ -172,13 +172,6 @@ nav li a:hover {
   padding-top: 4rem;
 }
 
-.image-one {
-  background-image: url(assets/images/a15ca772402053490171a5e8ff763f88.png);
-  background-size: contain;
-  width: 470px;
-  height: 293px;
-  cursor: pointer;
-}
 .gallery div {
   transition-duration: 0.3s;
 }
@@ -187,8 +180,32 @@ nav li a:hover {
   transition-duration: 0.3s;
 }
 
+.image-one {
+  background-image: url(assets/images/e6177a1446e76b9fe8e87334903ca7a8.webp);
+  background-image: -webkit-image-set(
+    url(assets/images/e6177a1446e76b9fe8e87334903ca7a8.webp) type("image/webp"),
+    url(assets/images/a15ca772402053490171a5e8ff763f88.png) type("image/png")
+  );
+  background-image: image-set(
+    url(assets/images/e6177a1446e76b9fe8e87334903ca7a8.webp) type("image/webp"),
+    url(assets/images/a15ca772402053490171a5e8ff763f88.png) type("image/png")
+  );
+  background-size: contain;
+  width: 470px;
+  height: 293px;
+  cursor: pointer;
+}
+
 .image-two {
   background-image: url(assets/images/ac3c0cc26d4dda5693a6f59b96cbd004.webp);
+  background-image: -webkit-image-set(
+    url(assets/images/ac3c0cc26d4dda5693a6f59b96cbd004.webp) type("image/webp"),
+    url(assets/images/bcd6eb282dca8be32612cc0a42cc36dc.png) type("image/png")
+  );
+  background-image: image-set(
+    url(assets/images/ac3c0cc26d4dda5693a6f59b96cbd004.webp) type("image/webp"),
+    url(assets/images/bcd6eb282dca8be32612cc0a42cc36dc.png) type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
@@ -196,7 +213,15 @@ nav li a:hover {
 }
 
 .image-three {
-  background-image: url(assets/images/ce4e0bc1389247b35dceaca04678a730.png);
+  background-image: url(assets/images/fea335faafa66880f6e11cf2033b2844.webp);
+  background-image: -webkit-image-set(
+    url(assets/images/fea335faafa66880f6e11cf2033b2844.webp) type("image/webp"),
+    url(assets/images/ce4e0bc1389247b35dceaca04678a730.png) type("image/png")
+  );
+  background-image: image-set(
+    url(assets/images/fea335faafa66880f6e11cf2033b2844.webp) type("image/webp"),
+    url(assets/images/ce4e0bc1389247b35dceaca04678a730.png) type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
@@ -204,7 +229,15 @@ nav li a:hover {
 }
 
 .image-four {
-  background-image: url(assets/images/d8526b6d5e0a897d85246ff135d33369.png);
+  background-image: url(assets/images/eb9131ee45f0720a1db06482447edf40.webp);
+  background-image: -webkit-image-set(
+    url(assets/images/eb9131ee45f0720a1db06482447edf40.webp) type("image/webp"),
+    url(assets/images/d8526b6d5e0a897d85246ff135d33369.png) type("image/png")
+  );
+  background-image: image-set(
+    url(assets/images/eb9131ee45f0720a1db06482447edf40.webp) type("image/webp"),
+    url(assets/images/d8526b6d5e0a897d85246ff135d33369.png) type("image/png")
+  );
   background-size: contain;
   width: 470px;
   height: 312px;
