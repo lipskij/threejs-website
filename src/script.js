@@ -88,20 +88,20 @@ const footer = document.querySelector("footer");
 footer.appendChild(document.createTextNode(new Date().getFullYear()));
 
 ///////////////////////////////////////////////////////////////////////////////
-
+// const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
-function onMouseClick(event) {
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+// function onMouseClick(event) {
+//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  const x = event.pageX / window.innerWidth;
-  const y = event.pageY / window.innerHeight;
+//   const x = event.pageX / window.innerWidth;
+//   const y = event.pageY / window.innerHeight;
 
-  if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
-    window.scrollTo(0, "2000");
-  }
-}
+//   if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
+//     window.scrollTo(0, "2000");
+//   }
+// }
 
 // Mobiele touch
 function onTouchEnd(e) {
@@ -143,21 +143,21 @@ const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
 // Spot Light
-const spotLight = new THREE.SpotLight(0xffffff, 1, 10, Math.PI * 0.55);
-spotLight.castShadow = true;
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
-spotLight.shadow.camera.fov = 30;
-spotLight.shadow.camera.near = 1;
-spotLight.shadow.camera.far = 6;
+// const spotLight = new THREE.SpotLight(0xffffff, 1, 10, Math.PI * 0.55);
+// spotLight.castShadow = true;
+// spotLight.shadow.mapSize.width = 1024;
+// spotLight.shadow.mapSize.height = 1024;
+// spotLight.shadow.camera.fov = 30;
+// spotLight.shadow.camera.near = 1;
+// spotLight.shadow.camera.far = 6;
 
-spotLight.position.set(0, 2, 5);
-scene.add(spotLight);
-scene.add(spotLight.target);
+// spotLight.position.set(0, 2, 5);
+// scene.add(spotLight);
+// scene.add(spotLight.target);
 
-const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera);
-spotLightCameraHelper.visible = false;
-scene.add(spotLightCameraHelper);
+// const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera);
+// spotLightCameraHelper.visible = false;
+// scene.add(spotLightCameraHelper);
 
 // Textures
 const textureLoader = new THREE.TextureLoader();
@@ -199,7 +199,7 @@ fontsLoader.load("/fonts/font.json", (font) => {
   );
 
   // Text over button
-  const buttonText = new THREE.TextBufferGeometry("GET IN TOUCH", {
+  const buttonText = new THREE.TextBufferGeometry("WELCOME", {
     font: font,
     size: mobilesSize ? 0.2 : 0.3,
     height: 0.2,
@@ -272,8 +272,25 @@ fontsLoader.load("/fonts/font.json", (font) => {
 
   scene.add(text, textTwo, button, smiley);
 
+  const sphereGeometry = new THREE.SphereGeometry(0.1, 32, 16);
+  const spehereMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+  // Spheres aka stars
+  for (let i = 0; i < 500; i++) {
+    const sphere = new THREE.Mesh(sphereGeometry, spehereMaterial);
+
+    sphere.position.x = (Math.random() - 0.5) * 20;
+    sphere.position.y = (Math.random() - 0.5) * 20;
+    sphere.position.z = (Math.random() - 0.5) * 20;
+
+    const scale = (Math.random() - 0.5) / 2;
+    sphere.scale.set(scale, scale, scale);
+    scene.add(sphere);
+  }
+
   const tick = () => {
     const elapsedTime = clock.getElapsedTime();
+
     button.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
     smiley.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
     // Update controlss
@@ -300,6 +317,7 @@ const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
 cube.position.z = 0.8;
 cube.rotation.x = -0.1;
+cube.name = "cube";
 scene.add(cube);
 
 // const material = new THREE.MeshStandardMaterial();
@@ -358,7 +376,22 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 // Animate
 const clock = new THREE.Clock();
 
+// function onMouseMove(event) {
+//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+// }
+
 const tick = () => {
+  // raycaster.setFromCamera(mouse, camera);
+  // const intersects = raycaster.intersectObjects(scene.children);
+
+  // for (let i = 0; i < intersects.length; i++) {
+  //   if (intersects[i].object.id === 11) {
+  //     const webgl = document.querySelector(".webgl");
+  //     webgl.style.cursor = "grab";
+  //   }
+  // }
+
   const elapsedTime = clock.getElapsedTime();
   cube.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
 
@@ -368,7 +401,8 @@ const tick = () => {
   renderer.render(scene, camera);
 
   // Call tick again on the next frame
-  window.addEventListener("click", onMouseClick, false);
+  // window.addEventListener("mousemove", onMouseMove, false);
+  // window.addEventListener("click", onMouseClick, false);
   window.addEventListener("touchend", onTouchEnd);
 
   window.requestAnimationFrame(tick);

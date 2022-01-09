@@ -9,11 +9,9 @@ body {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
   background-color: #0c0c0c;
-  /* overflow: hidden; */
 }
 
 .webgl {
-  /* position: fixed; */
   cursor: grab;
   top: 4rem;
   left: 0;
@@ -72,29 +70,6 @@ nav li a:hover {
   position: absolute;
   top: 45%;
   border-left: 60px solid #81f5af;
-  transition-duration: 0.3s;
-}
-
-.triangle-left:hover {
-  border-left: 70px solid #c665df;
-  transition-duration: 0.3s;
-}
-
-.triangle-right {
-  width: 0;
-  height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  position: absolute;
-  top: 45%;
-  right: 0;
-  border-right: 60px solid #81f5af;
-  transition-duration: 0.3s;
-}
-
-.triangle-right:hover {
-  border-right: 70px solid #c665df;
-  /* transform: translateX(10px); */
   transition-duration: 0.3s;
 }
 
@@ -178,6 +153,10 @@ nav li a:hover {
 .gallery div:hover {
   transform: rotate(5deg);
   transition-duration: 0.3s;
+}
+
+.gallery a {
+  width: 400px;
 }
 
 .image-one {
