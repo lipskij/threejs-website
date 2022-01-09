@@ -98,7 +98,7 @@ function onMouseClick(event) {
   const x = event.pageX / window.innerWidth;
   const y = event.pageY / window.innerHeight;
 
-  if (x > 0.2 && x < 0.8 && y > 0.6 && y < 0.8) {
+  if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
     window.scrollTo(0, "2000");
   }
 }
