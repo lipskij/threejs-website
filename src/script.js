@@ -272,17 +272,50 @@ fontsLoader.load("/fonts/font.json", (font) => {
     scene.add(sphere);
   }
 
+  let rotateLeft = false;
+  let rotateRight = false;
+
+  function onMouseMove(event) {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    const triangleLeft = document.querySelector(".triangle-left");
+    const triangleRight = document.querySelector(".triangle-right");
+
+    if (event.target === triangleLeft) {
+      rotateLeft = true;
+    } else {
+      rotateLeft = false;
+    }
+
+    if (event.target === triangleRight) {
+      rotateRight = true;
+    } else {
+      rotateRight = false;
+    }
+  }
+
   const tick = () => {
     const elapsedTime = clock.getElapsedTime();
 
     button.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
     smiley.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
+
+    if (rotateLeft) {
+      text.rotation.y = elapsedTime / Math.PI / 2;
+    }
+
+    if (rotateRight) {
+      textTwo.rotation.y = elapsedTime / -Math.PI / 2;
+    }
+
     // Update controlss
     controls.update();
     // Render
     renderer.render(scene, camera);
 
     // Call tick again on the next frame
+    window.addEventListener("mousemove", onMouseMove, false);
     window.requestAnimationFrame(tick);
   };
 
@@ -360,11 +393,6 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 // Animate
 const clock = new THREE.Clock();
 
-// function onMouseMove(event) {
-//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-// }
-
 const tick = () => {
   // raycaster.setFromCamera(mouse, camera);
   // const intersects = raycaster.intersectObjects(scene.children);
@@ -385,7 +413,6 @@ const tick = () => {
   renderer.render(scene, camera);
 
   // Call tick again on the next frame
-  // window.addEventListener("mousemove", onMouseMove, false);
   // window.addEventListener("click", onMouseClick, false);
   window.addEventListener("touchend", onTouchEnd);
 
