@@ -265,7 +265,7 @@ fontsLoader.load("/fonts/font.json", (font) => {
   const spehereMaterial = new THREE.MeshBasicMaterial({ color: 0x81f5af });
 
   // Spheres aka stars
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 300; i++) {
     const sphere = new THREE.Mesh(sphereGeometry, spehereMaterial);
 
     sphere.position.x = (Math.random() - 0.5) * 20;
@@ -307,11 +307,11 @@ fontsLoader.load("/fonts/font.json", (font) => {
     smiley.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
 
     if (rotateLeft) {
-      text.rotation.y = elapsedTime / Math.PI / 2;
+      camera.position.x = Math.sin(elapsedTime * 2);
     }
 
     if (rotateRight) {
-      textTwo.rotation.y = elapsedTime / -Math.PI / 2;
+      camera.position.x = Math.sin(elapsedTime * 2);
     }
 
     // Update controlss
@@ -375,6 +375,7 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.x = 0;
 camera.position.y = 0.2;
 camera.position.z = 3.5;
+
 scene.add(camera);
 
 // Controls
