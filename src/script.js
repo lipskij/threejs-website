@@ -88,6 +88,7 @@ const footer = document.querySelector("footer");
 footer.appendChild(document.createTextNode(new Date().getFullYear()));
 
 ///////////////////////////////////////////////////////////////////////////////
+
 // const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
@@ -141,23 +142,6 @@ scene.background = new THREE.Color(0xf0c0c0c);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 // gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
 scene.add(ambientLight);
-
-// Spot Light
-// const spotLight = new THREE.SpotLight(0xffffff, 1, 10, Math.PI * 0.55);
-// spotLight.castShadow = true;
-// spotLight.shadow.mapSize.width = 1024;
-// spotLight.shadow.mapSize.height = 1024;
-// spotLight.shadow.camera.fov = 30;
-// spotLight.shadow.camera.near = 1;
-// spotLight.shadow.camera.far = 6;
-
-// spotLight.position.set(0, 2, 5);
-// scene.add(spotLight);
-// scene.add(spotLight.target);
-
-// const spotLightCameraHelper = new THREE.CameraHelper(spotLight.shadow.camera);
-// spotLightCameraHelper.visible = false;
-// scene.add(spotLightCameraHelper);
 
 // Textures
 const textureLoader = new THREE.TextureLoader();

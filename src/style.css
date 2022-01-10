@@ -526,6 +526,10 @@ footer p {
     row-gap: 5rem;
   }
 
+  .gallery a {
+    width: auto;
+  }
+
   .gallery p {
     padding: 0;
   }
