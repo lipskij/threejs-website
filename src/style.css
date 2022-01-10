@@ -125,10 +125,8 @@ nav li a:hover {
   margin: 0 2rem 0 2rem;
 }
 
-
-
 .git-icon p {
-  font-size: 1.3rem;
+  font-size: 3rem;
   margin: 10rem 0 5rem 0;
 }
 
@@ -273,6 +271,22 @@ nav li a:hover {
   margin: 0 auto;
   height: 85vh;
   color: #81f5af;
+}
+
+.triangle-bottom-right {
+  align-self: flex-end;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid #81f5af;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  transform: translateX(50px);
+}
+.triangle-bottom-right:hover {
+  border-bottom: 60px solid #c665df;
+  transition-duration: 0.3s;
 }
 
 .contacts h2 {

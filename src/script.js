@@ -92,17 +92,22 @@ footer.appendChild(document.createTextNode(new Date().getFullYear()));
 // const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
-// function onMouseClick(event) {
-//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+function onMouseClick(event) {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-//   const x = event.pageX / window.innerWidth;
-//   const y = event.pageY / window.innerHeight;
+  const triangleBottom = document.querySelector(".triangle-bottom-right");
+  if (event.target === triangleBottom) {
+    window.scrollTo(0, 0);
+  }
 
-//   if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
-//     window.scrollTo(0, "2000");
-//   }
-// }
+  // const x = event.pageX / window.innerWidth;
+  // const y = event.pageY / window.innerHeight;
+
+  // if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
+  //   window.scrollTo(0, "2000");
+  // }
+}
 
 // Mobiele touch
 function onTouchEnd(e) {
@@ -413,7 +418,7 @@ const tick = () => {
   renderer.render(scene, camera);
 
   // Call tick again on the next frame
-  // window.addEventListener("click", onMouseClick, false);
+  window.addEventListener("click", onMouseClick, false);
   window.addEventListener("touchend", onTouchEnd);
 
   window.requestAnimationFrame(tick);
