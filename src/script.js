@@ -426,3 +426,94 @@ const tick = () => {
 };
 
 tick();
+
+///////////////////////////////////////////////
+// EVERYTHING BELOW IS A NEW CANVAS FOR GALLERY
+
+const canvas2 = document.querySelector("canvas.webgl2");
+
+const scene2 = new THREE.Scene();
+scene2.background = new THREE.Color(0xf0c0c0c);
+
+const ambientLight2 = new THREE.AmbientLight(0xffffff, 1);
+// gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
+scene2.add(ambientLight2);
+
+const material2 = new THREE.MeshStandardMaterial();
+material2.roughness = 0.4;
+
+const plane2 = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), material2);
+plane2.rotation.x = -Math.PI * 0.5;
+plane2.position.y = -0.65;
+
+scene2.add(plane2);
+
+const sizes2 = {
+  width: window.innerWidth,
+  height: window.innerHeight,
+};
+
+window.addEventListener("resize", () => {
+  // Update sizes
+  sizes2.width = window.innerWidth;
+  sizes2.height = window.innerHeight;
+
+  // Update camera
+  camera2.aspect = sizes2.width / sizes2.height;
+  camera2.updateProjectionMatrix();
+
+  // Update renderer
+  renderer2.setSize(sizes2.width, sizes2.height);
+  renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
+
+// Base camera
+const camera2 = new THREE.PerspectiveCamera(
+  100,
+  sizes2.width / sizes2.height,
+  0.1,
+  100
+);
+camera2.position.x = 0;
+camera2.position.y = 0.2;
+camera2.position.z = 3.5;
+
+scene2.add(camera2);
+
+const controls2 = new OrbitControls(camera2, canvas2);
+controls2.enableDamping = true;
+controls2.enableZoom = false;
+
+const renderer2 = new THREE.WebGLRenderer({
+  canvas: canvas2,
+});
+
+renderer2.setSize(sizes2.width, sizes2.height);
+renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// shadow
+renderer2.shadowMap.enabled = true;
+// renderer.shadowMap.enabled = false;
+// shadow radius dont work with this
+renderer2.shadowMap.type = THREE.PCFSoftShadowMap;
+
+// Animate
+const clock2 = new THREE.Clock();
+
+const tick2 = () => {
+
+  const elapsedTime2 = clock2.getElapsedTime();
+  // cube.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
+
+  // Update controls
+  controls2.update();
+  // Render
+  renderer2.render(scene2, camera2);
+
+  // Call tick again on the next frame
+  // window.addEventListener("click", onMouseClick, false);
+  // window.addEventListener("touchend", onTouchEnd);
+
+  window.requestAnimationFrame(tick2);
+};
+
+tick2();
