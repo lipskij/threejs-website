@@ -439,21 +439,50 @@ const ambientLight2 = new THREE.AmbientLight(0xffffff, 1);
 // gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
 scene2.add(ambientLight2);
 
+const planeTextureLoader = new THREE.TextureLoader();
 
 // Ski project
-const planeTexture2Ski = new THREE.TextureLoader().load('/images/ski.png')
-const planeMaterialSki = new THREE.MeshMatcapMaterial({ map: planeTexture2Ski });
-const plane2GeometrySki = new THREE.PlaneGeometry(4.5, 3)
+const planeTexture2Ski = planeTextureLoader.load("/images/ski.png");
+const planeMaterialSki = new THREE.MeshBasicMaterial({ map: planeTexture2Ski });
+const plane2GeometrySki = new THREE.PlaneGeometry(4.5, 3);
 const plane2Ski = new THREE.Mesh(plane2GeometrySki, planeMaterialSki);
 
-plane2GeometrySki.center()
-plane2Ski.rotation.x = -.3;
-plane2Ski.position.y = 1,5;
+// NextJS project
+const planeTexture2NextJs = planeTextureLoader.load("/images/next-js.png");
+const planeMaterialNextJs = new THREE.MeshBasicMaterial({
+  map: planeTexture2NextJs,
+});
+const plane2GeometryNextJs = new THREE.PlaneGeometry(4.5, 3);
+const plane2NextJs = new THREE.Mesh(plane2GeometryNextJs, planeMaterialNextJs);
 
-scene2.add(plane2Ski);
+// vaskichi project
+const planeTexture2RPS = planeTextureLoader.load("/images/vaskichi.png");
+const planeMaterialRPS = new THREE.MeshBasicMaterial({ map: planeTexture2RPS });
+const plane2GeometryRPS = new THREE.PlaneGeometry(4.5, 3);
+const plane2RPS = new THREE.Mesh(plane2GeometryRPS, planeMaterialRPS);
+
+// send-money project
+const planeTexture2Money = planeTextureLoader.load("/images/send-money.png");
+const planeMaterialMoney = new THREE.MeshBasicMaterial({ map: planeTexture2Money });
+const plane2GeometryMoney = new THREE.PlaneGeometry(4.5, 3);
+const plane2Money = new THREE.Mesh(plane2GeometryMoney, planeMaterialMoney);
+
+plane2Ski.rotation.x = -0.3;
+plane2Ski.position.y = 2
+
+plane2NextJs.rotation.x = -0.3;
+plane2NextJs.position.y = 1.5
+
+plane2RPS.rotation.x = -0.3;
+plane2RPS.position.y = 1
+
+plane2Money.rotation.x = -0.3;
+plane2Money.position.y = 0.5
+
+scene2.add(plane2Ski, plane2NextJs, plane2RPS, plane2Money);
 
 const sizes2 = {
-  width: window.innerWidth /2,
+  width: window.innerWidth / 2,
   height: window.innerHeight,
 };
 
@@ -494,17 +523,11 @@ const renderer2 = new THREE.WebGLRenderer({
 
 renderer2.setSize(sizes2.width, sizes2.height);
 renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-// shadow
-renderer2.shadowMap.enabled = true;
-// renderer.shadowMap.enabled = false;
-// shadow radius dont work with this
-renderer2.shadowMap.type = THREE.PCFSoftShadowMap;
 
 // Animate
 const clock2 = new THREE.Clock();
 
 const tick2 = () => {
-
   const elapsedTime2 = clock2.getElapsedTime();
   // cube.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
 
