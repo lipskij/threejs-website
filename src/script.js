@@ -439,17 +439,21 @@ const ambientLight2 = new THREE.AmbientLight(0xffffff, 1);
 // gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
 scene2.add(ambientLight2);
 
-const material2 = new THREE.MeshStandardMaterial();
-material2.roughness = 0.4;
 
-const plane2 = new THREE.Mesh(new THREE.PlaneGeometry(5, 5), material2);
-plane2.rotation.x = -Math.PI * 0.5;
-plane2.position.y = -0.65;
+// Ski project
+const planeTexture2Ski = new THREE.TextureLoader().load('/images/ski.png')
+const planeMaterialSki = new THREE.MeshMatcapMaterial({ map: planeTexture2Ski });
+const plane2GeometrySki = new THREE.PlaneGeometry(4.5, 3)
+const plane2Ski = new THREE.Mesh(plane2GeometrySki, planeMaterialSki);
 
-scene2.add(plane2);
+plane2GeometrySki.center()
+plane2Ski.rotation.x = -.3;
+plane2Ski.position.y = 1,5;
+
+scene2.add(plane2Ski);
 
 const sizes2 = {
-  width: window.innerWidth,
+  width: window.innerWidth /2,
   height: window.innerHeight,
 };
 
