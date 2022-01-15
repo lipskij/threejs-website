@@ -26,6 +26,8 @@ nav {
   background: #0c0c0c;
   border-bottom: #c665df solid 1px;
   transform: translateX(-100%);
+  transition: all 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition-delay: 1s;
 }
 
 nav ul {
@@ -72,8 +74,9 @@ nav li a:hover {
   position: absolute;
   top: 45%;
   border-left: 60px solid #81f5af;
-  transition-duration: 0.3s;
   transform: translateX(-100%);
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .triangle-left:hover {
@@ -90,8 +93,9 @@ nav li a:hover {
   top: 45%;
   right: 0;
   border-right: 60px solid #81f5af;
-  transition-duration: 0.3s;
   transform: translateX(1000%);
+  transition-duration: 0.3s;
+  transition-delay: 0.5s;
 }
 
 .triangle-right:hover {
@@ -285,7 +289,7 @@ nav li a:hover {
   border-bottom: 50px solid #81f5af;
   transition-duration: 0.3s;
   cursor: pointer;
-  transform: translateX(50px);
+  transform: translateY(-50px);
 }
 .triangle-bottom-right:hover {
   border-bottom: 60px solid #c665df;
@@ -441,15 +445,25 @@ footer p {
     overflow: hidden;
   }
   .line {
-    width: 40px;
-    height: 3px;
+    min-width: 40px;
+    min-height: 4px;
     background: #81f5af;
-    margin: 5px;
+    margin-top: 6px;
     transition-duration: 0.3s;
+    border-radius: 3px;
   }
   .line.open {
     background: #0c0c0c;
     transition-duration: 0.3s;
+  }
+  .line.open.first {
+    transform: translateY(250%) rotateZ(45deg);
+  }
+  .line.open.second {
+    transform: scaleX(0);
+  }
+  .line.open.third {
+    transform: translateY(-250%) rotateZ(-45deg);
   }
   nav {
     position: fixed;
@@ -457,6 +471,7 @@ footer p {
     margin: auto;
     width: 100%;
     display: flex;
+    transform: translateX(-100%);
   }
   .hamburger {
     position: absolute;

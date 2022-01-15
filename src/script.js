@@ -7,15 +7,12 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 window.onload = () => {
   const nav = document.querySelector("nav");
   nav.style.transform = "translateX(0)";
-  nav.style.transitionDuration = ".5s";
 
   const triangleLeft = document.querySelector(".triangle-left");
   triangleLeft.style.transform = "translateX(0)";
-  triangleLeft.style.transitionDelay = "0.5s";
 
   const triangleRight = document.querySelector(".triangle-right");
   triangleRight.style.transform = "translateX(0)";
-  triangleRight.style.transitionDelay = "0.5s";
 
   const canvas = document.querySelector("canvas.webgl");
   canvas.style.opacity = 1;
@@ -132,7 +129,6 @@ function onTouchEnd(e) {
   const x = e.changedTouches[0].pageX / window.innerWidth;
   const y = e.changedTouches[0].pageY / window.innerHeight;
 
-
   // need an arrow for mobile users
   if (x > 0.09 && x < 1.0 && y > 0.5 && y < 0.8) {
     window.scrollTo(0, "1700");
@@ -152,7 +148,6 @@ scene.background = new THREE.Color(0xf0c0c0c);
 
 // Light
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-// gui.add(ambientLight, "intensity").min(0).max(1).step(0.001);
 scene.add(ambientLight);
 
 // Textures
@@ -247,12 +242,12 @@ fontsLoader.load("/fonts/font.json", (font) => {
   textTwo.receiveShadow = true;
   buttonText.receiveShadow = true;
 
-  text.position.y = mobilesSize ? 2 : 1.5;
+  text.position.y = 1.5;
   text.position.z = 0.3;
   text.rotation.x = -0.1;
 
   textTwo.position.z = 0.4;
-  textTwo.position.y = mobilesSize ? 0.5 : 0.2;
+  textTwo.position.y = 0.1;
   textTwo.scale.x = 0.48;
   textTwo.scale.y = 0.48;
   textTwo.scale.z = 0.48;
@@ -264,7 +259,6 @@ fontsLoader.load("/fonts/font.json", (font) => {
   smiley.rotation.x = -0.1;
   smiley.position.z = 0.6;
   smiley.rotateY(Math.PI);
-  // smiley.rotateZ(Math.PI / -2);
 
   scene.add(text, textTwo, button, smiley);
 
@@ -310,8 +304,8 @@ fontsLoader.load("/fonts/font.json", (font) => {
   const tick = () => {
     const elapsedTime = clock.getElapsedTime();
 
-    button.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
-    smiley.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
+    button.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
+    smiley.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
 
     if (rotateLeft) {
       camera.position.x = Math.sin(elapsedTime * 2);
@@ -334,6 +328,8 @@ fontsLoader.load("/fonts/font.json", (font) => {
   tick();
 });
 
+
+// Cube
 const cubeGeometry = new RoundedBoxGeometry(
   mobilesSize ? 2.7 : 3.5,
   1,
@@ -348,9 +344,6 @@ cube.position.z = 0.8;
 cube.rotation.x = -0.1;
 cube.name = "cube";
 scene.add(cube);
-
-// const material = new THREE.MeshStandardMaterial();
-// material.roughness = 0.7;
 
 // Sizes
 const sizes = {
@@ -397,28 +390,13 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-// shadow
-renderer.shadowMap.enabled = true;
-// renderer.shadowMap.enabled = false;
-// shadow radius dont work with this
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 // Animate
 const clock = new THREE.Clock();
 
 const tick = () => {
-  // raycaster.setFromCamera(mouse, camera);
-  // const intersects = raycaster.intersectObjects(scene.children);
-
-  // for (let i = 0; i < intersects.length; i++) {
-  //   if (intersects[i].object.id === 11) {
-  //     const webgl = document.querySelector(".webgl");
-  //     webgl.style.cursor = "grab";
-  //   }
-  // }
-
   const elapsedTime = clock.getElapsedTime();
-  cube.position.y = -1 + Math.sin(elapsedTime * 2) * -0.1;
+  cube.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
 
   // Update controls
   controls.update();
