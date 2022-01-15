@@ -111,24 +111,12 @@ function onMouseClick(event) {
 
 // Mobiele touch
 function onTouchEnd(e) {
-  const x = e.changedTouches[0].pageX;
-  const y = e.changedTouches[0].pageY;
-
-  const mobileHeight = window.innerHeight;
-  // const mobileWidth = window.innerWidth;
+  const x = e.changedTouches[0].pageX / window.innerWidth;
+  const y = e.changedTouches[0].pageY / window.innerHeight;
 
   // Adjust for big phones
-  if (mobileHeight > 790 && mobileHeight < 890) {
-    if (x > 35 && x < 350 && y > 550 && y < 670) {
-      window.scrollTo(0, "2155");
-    }
-  }
-
-  // Adjust for small phones
-  if (mobileHeight > 500 && mobileHeight < 600) {
-    if (x > 50 && x < 280 && y > 400 && y < 470) {
-      window.scrollTo(0, "1950");
-    }
+  if (x > 0.12 && x < 0.9 && y > 0.7 && y < 0.8) {
+    window.scrollTo(0, "1900");
   }
 }
 
