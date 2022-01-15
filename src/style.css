@@ -78,7 +78,6 @@ nav li a:hover {
 
 .triangle-left:hover {
   border-left: 70px solid #c665df;
-  transition-duration: 0.3s;
   cursor: pointer;
 }
 
@@ -97,7 +96,6 @@ nav li a:hover {
 
 .triangle-right:hover {
   border-right: 70px solid #c665df;
-  transition-duration: 0.3s;
   cursor: pointer;
 }
 
