@@ -24,6 +24,7 @@ nav {
   width: 100%;
   background: #0c0c0c;
   border-bottom: #c665df solid 1px;
+  transform: translateX(-100%);
 }
 
 nav ul {
@@ -71,11 +72,13 @@ nav li a:hover {
   top: 45%;
   border-left: 60px solid #81f5af;
   transition-duration: 0.3s;
+  transform: translateX(-100%);
 }
 
 .triangle-left:hover {
   border-left: 70px solid #c665df;
   transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .triangle-right {
@@ -88,12 +91,13 @@ nav li a:hover {
   right: 0;
   border-right: 60px solid #81f5af;
   transition-duration: 0.3s;
+  transform: translateX(1000%);
 }
 
 .triangle-right:hover {
   border-right: 70px solid #c665df;
-  /* transform: translateX(10px); */
   transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .about {
@@ -449,7 +453,8 @@ footer p {
     transition-duration: 0.3s;
   }
   nav {
-    position: relative;
+    position: fixed;
+    z-index: 2;
     margin: auto;
     width: 100%;
     display: flex;
@@ -585,7 +590,7 @@ footer p {
   .triangle-bottom-right {
     display: none;
   }
-  
+
   .contacts h2 {
     padding: 0 0 5rem 0;
   }

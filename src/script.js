@@ -4,7 +4,21 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 // import * as dat from "lil-gui";
 
-///////////////////////////////////////////////////////////////////////////////
+window.onload = () => {
+  const nav = document.querySelector("nav");
+  nav.style.transform = "translateX(0)";
+  nav.style.transitionDuration = ".5s";
+
+  const triangleLeft = document.querySelector(".triangle-left");
+  triangleLeft.style.transform = "translateX(0)";
+  triangleLeft.style.transitionDelay = "0.5s";
+
+  const triangleRight = document.querySelector(".triangle-right");
+  triangleRight.style.transform = "translateX(0)";
+  triangleRight.style.transitionDelay = "0.5s";
+};
+
+///////////////////////////////////////////////////////////
 // Nav bar mobile
 
 const hamburger = document.querySelector(".hamburger");
