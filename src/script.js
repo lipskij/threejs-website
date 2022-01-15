@@ -16,6 +16,10 @@ window.onload = () => {
   const triangleRight = document.querySelector(".triangle-right");
   triangleRight.style.transform = "translateX(0)";
   triangleRight.style.transitionDelay = "0.5s";
+
+  const canvas = document.querySelector("canvas.webgl");
+  canvas.style.opacity = 1;
+  canvas.style.transitionDuration = "1s";
 };
 
 ///////////////////////////////////////////////////////////
@@ -128,9 +132,10 @@ function onTouchEnd(e) {
   const x = e.changedTouches[0].pageX / window.innerWidth;
   const y = e.changedTouches[0].pageY / window.innerHeight;
 
-  // Adjust for big phones
-  if (x > 0.12 && x < 0.9 && y > 0.7 && y < 0.8) {
-    window.scrollTo(0, "1900");
+
+  // need an arrow for mobile users
+  if (x > 0.09 && x < 1.0 && y > 0.5 && y < 0.8) {
+    window.scrollTo(0, "1700");
   }
 }
 
@@ -139,7 +144,7 @@ function onTouchEnd(e) {
 // const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector("canvas.webgl");
+const canvas = document.querySelector("canvas");
 
 // Scene
 const scene = new THREE.Scene();
