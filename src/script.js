@@ -5,9 +5,6 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 // import * as dat from "lil-gui";
 
 window.onload = () => {
-  const nav = document.querySelector("nav");
-  nav.style.transform = "translateX(0)";
-
   const triangleLeft = document.querySelector(".triangle-left");
   triangleLeft.style.transform = "translateX(0)";
 
@@ -327,7 +324,6 @@ fontsLoader.load("/fonts/font.json", (font) => {
 
   tick();
 });
-
 
 // Cube
 const cubeGeometry = new RoundedBoxGeometry(
