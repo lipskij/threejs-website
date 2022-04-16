@@ -65,43 +65,6 @@ nav li a:hover {
   height: 100vh;
 }
 
-.triangle-left {
-  width: 0;
-  height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  position: absolute;
-  top: 45%;
-  border-left: 60px solid #81f5af;
-  transform: translateX(-100%);
-  transition-duration: 0.3s;
-  transition-delay: 0.2s;
-}
-
-.triangle-left:hover {
-  border-left: 70px solid #c665df;
-  cursor: pointer;
-}
-
-.triangle-right {
-  width: 0;
-  height: 0;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
-  position: absolute;
-  top: 45%;
-  right: 0;
-  border-right: 60px solid #81f5af;
-  transform: translateX(1000%);
-  transition-duration: 0.3s;
-  transition-delay: 0.5s;
-}
-
-.triangle-right:hover {
-  border-right: 70px solid #c665df;
-  cursor: pointer;
-}
-
 .about {
   display: flex;
   flex-direction: column;

@@ -5,12 +5,6 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 // import * as dat from "lil-gui";
 
 window.onload = () => {
-  const triangleLeft = document.querySelector(".triangle-left");
-  triangleLeft.style.transform = "translateX(0)";
-
-  const triangleRight = document.querySelector(".triangle-right");
-  triangleRight.style.transform = "translateX(0)";
-
   const canvas = document.querySelector("canvas.webgl");
   canvas.style.opacity = 1;
   canvas.style.transitionDuration = "1s";
