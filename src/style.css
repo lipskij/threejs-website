@@ -266,7 +266,7 @@ nav li a:hover {
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 50px solid #81f5af;
+  border-bottom: 50px solid #253237;
   transition-duration: 0.3s;
   cursor: pointer;
   transform: translateY(-50px);
