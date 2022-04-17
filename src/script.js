@@ -106,13 +106,6 @@ function onMouseClick(event) {
   if (event.target === triangleBottom) {
     window.scrollTo(0, 0);
   }
-
-  // const x = event.pageX / window.innerWidth;
-  // const y = event.pageY / window.innerHeight;
-
-  // if (x > 0.35 && x < 0.65 && y > 0.6 && y < 0.8) {
-  //   window.scrollTo(0, "2000");
-  // }
 }
 
 // Mobiele touch
@@ -131,11 +124,11 @@ function onTouchEnd(e) {
 // const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector("canvas");
+const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xf0c0c0c);
+scene.background = new THREE.Color(0xffffff);
 
 // Light
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
@@ -143,11 +136,7 @@ scene.add(ambientLight);
 
 // Textures
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load("/textures/matcaps/lgtv_matcap.jpeg");
-const buttonTexture = textureLoader.load("/textures/matcaps/lgtv_matcap.jpeg");
-const buttonTextTexture = textureLoader.load(
-  "/textures/matcaps/dark_matcap.jpeg"
-);
+const matcapTexture = textureLoader.load("/textures/matcaps/2.png");
 
 // Mobile sizes
 const mobilesSize = window.innerWidth < 700;
@@ -180,58 +169,19 @@ fontsLoader.load("/fonts/font.json", (font) => {
     }
   );
 
-  // Text over button
-  const buttonText = new THREE.TextBufferGeometry("W E L C O M E", {
-    font: font,
-    size: mobilesSize ? 0.2 : 0.3,
-    height: 0.2,
-    bevelEnabled: true,
-    curvedSegment: 5,
-    bevelThickness: 0.03,
-    bevelSize: 0.02,
-    bevelOffset: 0,
-    bevelSegments: 4,
-  });
-
-  // smiley
-  const smileyText = new THREE.TextBufferGeometry(
-    "Curious one... I like you  : )",
-    {
-      font: font,
-      size: mobilesSize ? 0.15 : 0.2,
-      height: 0.2,
-      bevelEnabled: true,
-      curvedSegment: 5,
-      bevelThickness: 0.03,
-      bevelSize: 0.02,
-      bevelOffset: 0,
-      bevelSegments: 4,
-    }
-  );
-  //
-
   textOneGeometry.center();
   textTwoGeometry.center();
-  buttonText.center();
-  smileyText.center();
 
   const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
 
-  const buttonTextMaterial = new THREE.MeshMatcapMaterial({
-    matcap: buttonTextTexture,
-  });
-
   const text = new THREE.Mesh(textOneGeometry, material);
   const textTwo = new THREE.Mesh(textTwoGeometry, material);
-  const button = new THREE.Mesh(buttonText, buttonTextMaterial);
-  const smiley = new THREE.Mesh(smileyText, buttonTextMaterial);
 
   text.castShadow = true;
   textTwo.castShadow = true;
 
   text.receiveShadow = true;
   textTwo.receiveShadow = true;
-  buttonText.receiveShadow = true;
 
   text.position.y = 1.5;
   text.position.z = 0.3;
@@ -244,100 +194,12 @@ fontsLoader.load("/fonts/font.json", (font) => {
   textTwo.scale.z = 0.48;
   textTwo.rotation.x = -0.1;
 
-  button.position.z = 1;
-  button.rotation.x = -0.1;
-
-  smiley.rotation.x = -0.1;
-  smiley.position.z = 0.6;
-  smiley.rotateY(Math.PI);
-
-  scene.add(text, textTwo, button, smiley);
-
-  const sphereGeometry = new THREE.SphereGeometry(0.1, 32, 16);
-  const spehereMaterial = new THREE.MeshBasicMaterial({ color: 0x81f5af });
-
-  // Spheres aka stars
-  for (let i = 0; i < 300; i++) {
-    const sphere = new THREE.Mesh(sphereGeometry, spehereMaterial);
-
-    sphere.position.x = (Math.random() - 0.5) * 20;
-    sphere.position.y = (Math.random() - 0.5) * 20;
-    sphere.position.z = (Math.random() - 0.5) * 20;
-
-    const scale = (Math.random() - 0.5) / 2;
-    sphere.scale.set(scale, scale, scale);
-    scene.add(sphere);
-  }
-
-  let rotateLeft = false;
-  let rotateRight = false;
-
-  function onMouseMove(event) {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    const triangleLeft = document.querySelector(".triangle-left");
-    const triangleRight = document.querySelector(".triangle-right");
-
-    if (event.target === triangleLeft) {
-      rotateLeft = true;
-    } else {
-      rotateLeft = false;
-    }
-
-    if (event.target === triangleRight) {
-      rotateRight = true;
-    } else {
-      rotateRight = false;
-    }
-  }
-
-  const tick = () => {
-    const elapsedTime = clock.getElapsedTime();
-
-    button.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
-    smiley.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
-
-    if (rotateLeft) {
-      camera.position.x = Math.sin(elapsedTime * 2);
-    }
-
-    if (rotateRight) {
-      camera.position.x = Math.sin(elapsedTime * 2);
-    }
-
-    // Update controlss
-    controls.update();
-    // Render
-    renderer.render(scene, camera);
-
-    // Call tick again on the next frame
-    window.addEventListener("mousemove", onMouseMove, false);
-    window.requestAnimationFrame(tick);
-  };
-
-  tick();
+  scene.add(text, textTwo);
 });
-
-// Cube
-const cubeGeometry = new RoundedBoxGeometry(
-  mobilesSize ? 2.7 : 3.5,
-  1,
-  0.5,
-  7,
-  0.1
-);
-const cubeMaterial = new THREE.MeshMatcapMaterial({ matcap: buttonTexture });
-const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-
-cube.position.z = 0.8;
-cube.rotation.x = -0.1;
-cube.name = "cube";
-scene.add(cube);
 
 // Sizes
 const sizes = {
-  width: window.innerWidth,
+  width: window.innerWidth / 1.5,
   height: window.innerHeight,
 };
 
@@ -386,7 +248,6 @@ const clock = new THREE.Clock();
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
-  cube.position.y = -1.4 + Math.sin(elapsedTime * 2) * -0.1;
 
   // Update controls
   controls.update();
