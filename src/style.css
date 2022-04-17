@@ -68,13 +68,13 @@ nav li a:hover {
 }
 
 .chat-box {
-  background-image: url("/static/images/programmer.png");
+  background-image: url("/static/images/programmer.webp");
   background-image: -webkit-image-set(
-    url("/static/images/programmer.png") type("image/png"),
-    url("/static/images/send-money.png") type("image/png")
+    url("/static/images/programmer.webp") type("image/webp"),
+    url("/static/images/send-money.webp") type("image/webp")
   );
   background-image: image-set(
-    url("/static/images/programmer.png") type("image/png"),
+    url("/static/images/programmer.webp") type("image/webp"),
     url("/static/images/programmer.png") type("image/png")
   );
   background-size: contain;
