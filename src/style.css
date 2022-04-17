@@ -159,7 +159,7 @@ nav li a:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 10rem;
+  gap: 10rem;
   margin: 0 auto;
   width: 80vw;
   height: 100%;
@@ -427,13 +427,13 @@ footer p {
   .line {
     min-width: 40px;
     min-height: 4px;
-    background: #81f5af;
+    background: #C47DD0;
     margin-top: 6px;
     transition-duration: 0.3s;
     border-radius: 3px;
   }
   .line.open {
-    background: #0c0c0c;
+    background: #fff;
     transition-duration: 0.3s;
   }
   .line.open.first {
@@ -451,7 +451,7 @@ footer p {
     margin: auto;
     width: 100%;
     display: flex;
-    transform: translateX(-100%);
+    border-bottom: none;
   }
   .hamburger {
     position: absolute;
@@ -460,7 +460,7 @@ footer p {
     top: 50%;
     transform: translate(-5%, -50%);
     z-index: 2;
-    color: #81f5af;
+    color: #C47DD0;
   }
   nav ul {
     justify-content: space-evenly;
@@ -472,7 +472,7 @@ footer p {
   .nav-links {
     position: relative;
     width: 100%;
-    background: linear-gradient(90deg, #4a65ef, #b04fe8);
+    background: #253237;
     flex-direction: column;
     pointer-events: none;
     clip-path: circle(5px at 100% -5%);
@@ -491,7 +491,7 @@ footer p {
   .nav-links li a {
     font-size: 2rem;
     font-weight: 600;
-    color: #0c0c0c;
+    color: #fff;
   }
   .nav-links li:nth-child(1) {
     transition: all 0.5s ease 0.1s;
@@ -514,6 +514,24 @@ footer p {
   }
   .triangle-right {
     display: none;
+  }
+  .home {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chat-box {
+    background-image: url("/static/images/programmer.webp");
+    background-image: -webkit-image-set(
+      url("/static/images/programmer.webp") type("image/webp"),
+      url("/static/images/send-money.webp") type("image/webp")
+    );
+    background-image: image-set(
+      url("/static/images/programmer.webp") type("image/webp"),
+      url("/static/images/programmer.png") type("image/png")
+    );
+    background-size: contain;
+    width: 200px;
+    height: 200px;
   }
   .about {
     width: 90vw;
@@ -576,8 +594,8 @@ footer p {
     cursor: pointer;
   }
   .contacts {
-    width: 90vw;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     margin-top: 10rem;
   }
 
@@ -594,7 +612,7 @@ footer p {
   textarea {
     width: 90%;
     padding: 12px;
-    border: 1px solid #c665df;
+    border: 1px solid #253237;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
@@ -606,7 +624,7 @@ footer p {
   .email {
     width: 90%;
     padding: 0.5rem;
-    border: 1px solid #c665df;
+    border: 1px solid #253237;
     border-radius: 4px;
   }
 
@@ -616,7 +634,7 @@ footer p {
 
   /* Style the submit button with a specific background color etc */
   button[type="submit"] {
-    background-color: #c665df;
+    background-color: #C47DD0;
     font-weight: 600;
     font-size: 1.3rem;
     color: #0c0c0c;
@@ -652,7 +670,7 @@ footer p {
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(238, 138, 252, 0.5);
+    box-shadow: inset 0 0 2000px rgba(128, 126, 128, 0.5);
     filter: blur(5px);
     margin: -20px;
   }
@@ -667,7 +685,7 @@ footer p {
     flex-direction: row;
     width: 100vw;
     justify-content: center;
-    color: #81f5af;
+    color: #253237;
     margin: 3rem 0 1rem 0;
   }
   footer p {

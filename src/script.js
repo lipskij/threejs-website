@@ -1,7 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 // import * as dat from "lil-gui";
 
 window.onload = () => {
@@ -108,17 +107,6 @@ function onMouseClick(event) {
   }
 }
 
-// Mobiele touch
-function onTouchEnd(e) {
-  const x = e.changedTouches[0].pageX / window.innerWidth;
-  const y = e.changedTouches[0].pageY / window.innerHeight;
-
-  // need an arrow for mobile users
-  if (x > 0.09 && x < 1.0 && y > 0.5 && y < 0.8) {
-    window.scrollTo(0, "1700");
-  }
-}
-
 // Base
 // Debug
 // const gui = new dat.GUI();
@@ -131,7 +119,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
 // Light
-const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+const ambientLight = new THREE.AmbientLight(0xff0f0f, 1);
 scene.add(ambientLight);
 
 // Textures
@@ -145,7 +133,7 @@ const fontsLoader = new THREE.FontLoader();
 fontsLoader.load("/fonts/font.json", (font) => {
   const textOneGeometry = new THREE.TextBufferGeometry("Emil Lipskij", {
     font: font,
-    size: mobilesSize ? 0.45 : 0.8,
+    size: mobilesSize ? 0.55 : 0.8,
     height: 0.15,
     bevelEnabled: true,
     curvedSegment: 5,
@@ -158,7 +146,7 @@ fontsLoader.load("/fonts/font.json", (font) => {
     "Front   End   Developer",
     {
       font: font,
-      size: mobilesSize ? 0.45 : 0.8,
+      size: mobilesSize ? 0.65 : 0.8,
       height: 0.2,
       bevelEnabled: true,
       curvedSegment: 5,
@@ -199,8 +187,8 @@ fontsLoader.load("/fonts/font.json", (font) => {
 
 // Sizes
 const sizes = {
-  width: window.innerWidth / 1.5,
-  height: window.innerHeight,
+  width: mobilesSize ? window.innerWidth : window.innerWidth / 1.5,
+  height: mobilesSize ? window.innerHeight / 1.5 : window.innerHeight,
 };
 
 window.addEventListener("resize", () => {
@@ -256,7 +244,6 @@ const tick = () => {
 
   // Call tick again on the next frame
   window.addEventListener("click", onMouseClick, false);
-  window.addEventListener("touchend", onTouchEnd);
 
   window.requestAnimationFrame(tick);
 };
