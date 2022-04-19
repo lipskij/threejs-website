@@ -124,7 +124,7 @@ scene.add(ambientLight);
 
 // Textures
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load("/textures/matcaps/2.png");
+const matcapTexture = textureLoader.load("/textures/matcaps/grey.jpeg");
 
 // Mobile sizes
 const mobilesSize = window.innerWidth < 700;
