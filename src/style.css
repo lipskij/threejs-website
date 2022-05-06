@@ -8,79 +8,81 @@ html,
 body {
   scroll-behavior: smooth;
   font-family: "Roboto", sans-serif;
-  background-color: #EBEBEB;
-}
-
-.webgl {
-  cursor: grab;
-  top: 4rem;
-  left: 0;
-  opacity: 0;
+  background-color: #141b1e;
 }
 
 nav {
   display: flex;
-  align-items: center;
   height: 4rem;
   width: 100%;
-  background: #fff;
-  border-bottom: #C47DD0 solid 1px;
-  transition: all 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  transition-delay: 1s;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-end;
   margin: 0;
-  width: 100vw;
+  width: 45vw;
 }
 
 nav li {
   text-decoration: none;
   list-style: none;
-  border-radius: 10px;
-  padding: 0.5rem;
-  transition-duration: 0.3s;
 }
 
 nav li a {
   text-decoration: none;
-  color: #6B7881;
-  padding: 0.5rem;
-  transition: background-color 0.2s ease-out;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  transition-duration: 0.3s;
+  color: #abbbc7;
+  font-size: 1.3rem;
+  transition: 0.3s;
 }
 
 nav li a:hover {
-  color: #C47DD0;
-  transition-duration: 0.3s;
+  color: #dbf2fe;
+  transition: 0.3s;
 }
 
 .home {
   height: 100vh;
-  background-color: #fff;
+  width: 100vw;
   display: flex;
   align-items: center;
 }
 
-.chat-box {
-  background-image: url("/static/images/programmer.webp");
-  background-image: -webkit-image-set(
-    url("/static/images/programmer.webp") type("image/webp"),
-    url("/static/images/send-money.webp") type("image/webp")
-  );
-  background-image: image-set(
-    url("/static/images/programmer.webp") type("image/webp"),
-    url("/static/images/programmer.png") type("image/png")
-  );
-  background-size: contain;
-  width: 300px;
-  height: 300px;
+.home div {
+  font-size: 2.5rem;
+  color: #dbf2fe;
+  text-align: left;
+  margin-left: 5rem;
+  width: 100vw;
 }
+.home p {
+  font-size: 1.3rem;
+  color: #abbbc7;
+}
+
+.home button {
+  background-color: #dbf2fe;
+  border: none;
+  color: #141b1e;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home button a {
+  text-decoration: none;
+  color: #141b1e;
+}
+
+.home img {
+  width: 50vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -89,7 +91,7 @@ nav li a:hover {
   width: 60%;
   height: 100vh;
   margin: 0 auto;
-  color: #253237;
+  color: #dbf2fe;
   line-height: 2.2;
 }
 
@@ -110,33 +112,14 @@ nav li a:hover {
   margin: 0 2rem 0 2rem;
 }
 
-.git-icon p {
-  font-size: 3rem;
-  margin: 10rem 0 5rem 0;
-}
-
-.git-icon svg {
-  transition-duration: 0.3s;
+.git-link a {
+  text-decoration: none;
+  color: #dbf2fe;
   cursor: pointer;
 }
 
-.git-icon svg:hover {
-  transition-duration: 0.3s;
-  fill: #C47DD0;
-}
-
-.git-btn {
-  border-radius: 5px;
-  padding: 1rem;
-  background: #0c0c0c;
-  transition-duration: 0.3s;
-}
-
-.git-btn:hover {
-  background: none;
-  transform: scale(1.1);
-  color: #0c0c0c;
-  transition-duration: 0.3s;
+.git-link a:hover {
+  color: #81f5af;
 }
 
 .work {
@@ -146,7 +129,7 @@ nav li a:hover {
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  color: #253237;
+  color: #dbf2fe;
   line-height: 2.2;
   margin: 0 0 10rem 0;
 }
@@ -159,19 +142,22 @@ nav li a:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10rem;
+  gap: 3rem;
   margin: 0 auto;
   width: 80vw;
   height: 100%;
   transition-duration: 0.3s;
 }
 
-.gallery a {
+.gallery img {
   width: 400px;
+  border-radius: 5px;
+  transform: translateX(0px);
+  transition-duration: 0.3s;
 }
 
 .gallery p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding-top: 4rem;
 }
 
@@ -183,68 +169,11 @@ nav li a:hover {
   transition-duration: 0.3s;
 }
 
-.image-one {
-  background-image: url("/static/images/send-money.webp");
-  background-image: -webkit-image-set(
-    url("/static/images/send-money.webp") type("image/webp"),
-    url("/static/images/send-money.png") type("image/png")
-  );
-  background-image: image-set(
-    url("/static/images/send-money.webp") type("image/webp"),
-    url("/static/images/send-money.png") type("image/png")
-  );
-  background-size: contain;
-  width: 470px;
-  height: 293px;
-  cursor: pointer;
-}
-
+.image-one,
 .image-two {
-  background-image: url("/static/images/ski.webp");
-  background-image: -webkit-image-set(
-    url("/static/images/ski.webp") type("image/webp"),
-    url("/static/images/ski.png") type("image/png")
-  );
-  background-image: image-set(
-    url("/static/images/ski.webp") type("image/webp"),
-    url("/static/images/ski.png") type("image/png")
-  );
   background-size: contain;
-  width: 470px;
-  height: 312px;
   cursor: pointer;
-}
-
-.image-three {
-  background-image: url("/static/images/vaskichi.webp");
-  background-image: -webkit-image-set(
-    url("/static/images/vaskichi.webp") type("image/webp"),
-    url("/static/images/vaskichi.png") type("image/png")
-  );
-  background-image: image-set(
-    url("/static/images/vaskichi.webp") type("image/webp"),
-    url("/static/images/vaskichi.png") type("image/png")
-  );
-  background-size: contain;
-  width: 470px;
-  height: 312px;
-  cursor: pointer;
-}
-
-.image-four {
-  background-image: url("/static/images/next-js.webp");
-  background-image: -webkit-image-set(
-    url("/static/images/next-js.webp") type("image/webp"),
-    url("/static/images/next-js.png") type("image/png")
-  );
-  background-image: image-set(
-    url("/static/images/next-js.webp") type("image/webp"),
-    url("/static/images/next-js.png") type("image/png")
-  );
-  background-size: contain;
-  width: 470px;
-  height: 312px;
-  cursor: pointer;
+  transform: translateX(-100);
 }
 
 .contacts {
@@ -258,22 +187,6 @@ nav li a:hover {
   width: 100%;
   color: #253237;
   background-color: #fff;
-}
-
-.triangle-bottom-right {
-  align-self: flex-end;
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 50px solid #253237;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  transform: translateY(-50px);
-}
-.triangle-bottom-right:hover {
-  border-bottom: 60px solid #C47DD0;
-  transition-duration: 0.3s;
 }
 
 .contacts h2 {
@@ -315,10 +228,10 @@ textarea {
 
 /* Style the submit button with a specific background color etc */
 button[type="submit"] {
-  background-color: #C47DD0;
+  background-color: #253237;
   font-weight: 600;
   font-size: 1.3rem;
-  color: #0c0c0c;
+  color: #dbf2fe;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -332,7 +245,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button:hover {
+.container button:hover {
   background-color: #81f5af;
   color: #0c0c0c;
   transition-duration: 0.3s;
@@ -365,7 +278,7 @@ input[type="submit"]:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(135, 132, 135, 0.5);
+  box-shadow: inset 0 0 2000px rgba(172, 188, 202, 0.5);
   filter: blur(5px);
   margin: -20px;
 }
@@ -380,7 +293,7 @@ footer {
   flex-direction: row;
   width: 100vw;
   justify-content: center;
-  color: #253237;
+  color: #dbf2fe;
   margin: 3rem 0 1rem 0;
 }
 footer p {
@@ -427,7 +340,7 @@ footer p {
   .line {
     min-width: 40px;
     min-height: 4px;
-    background: #C47DD0;
+    background: #dbf2fe;
     margin-top: 6px;
     transition-duration: 0.3s;
     border-radius: 3px;
@@ -460,7 +373,7 @@ footer p {
     top: 50%;
     transform: translate(-5%, -50%);
     z-index: 2;
-    color: #C47DD0;
+    color: #c47dd0;
   }
   nav ul {
     justify-content: space-evenly;
@@ -491,7 +404,7 @@ footer p {
   .nav-links li a {
     font-size: 2rem;
     font-weight: 600;
-    color: #fff;
+    color: #dbf2fe;
   }
   .nav-links li:nth-child(1) {
     transition: all 0.5s ease 0.1s;
@@ -509,30 +422,14 @@ footer p {
     opacity: 1;
   }
 
-  .triangle-left {
-    display: none;
-  }
-  .triangle-right {
-    display: none;
-  }
   .home {
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
   }
-  .chat-box {
-    background-image: url("/static/images/programmer.webp");
-    background-image: -webkit-image-set(
-      url("/static/images/programmer.webp") type("image/webp"),
-      url("/static/images/send-money.webp") type("image/webp")
-    );
-    background-image: image-set(
-      url("/static/images/programmer.webp") type("image/webp"),
-      url("/static/images/programmer.png") type("image/png")
-    );
-    background-size: contain;
-    width: 200px;
-    height: 200px;
+
+  .home img {
+    display: none;
   }
+ 
   .about {
     width: 90vw;
     height: 100%;
@@ -565,34 +462,18 @@ footer p {
     padding: 0;
   }
   .image-two {
-    background-image: url("/static/images/ski.png");
     background-size: contain;
     width: 300px;
     height: 200px;
     cursor: pointer;
   }
   .image-one {
-    background-image: url("/static/images/send-money.png");
     background-size: contain;
     width: 300px;
     height: 187px;
     cursor: pointer;
   }
-  .image-three {
-    background-image: url("/static/images/vaskichi.png");
-    background-size: contain;
-    width: 300px;
-    height: 200px;
-    cursor: pointer;
-  }
 
-  .image-four {
-    background-image: url("/static/images/next-js.png");
-    background-size: contain;
-    width: 300px;
-    height: 200px;
-    cursor: pointer;
-  }
   .contacts {
     width: 100vw;
     height: 100vh;
@@ -634,7 +515,7 @@ footer p {
 
   /* Style the submit button with a specific background color etc */
   button[type="submit"] {
-    background-color: #C47DD0;
+    background-color: #c47dd0;
     font-weight: 600;
     font-size: 1.3rem;
     color: #0c0c0c;
