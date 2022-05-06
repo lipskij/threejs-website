@@ -173,7 +173,6 @@ nav li a:hover {
 .image-two {
   background-size: contain;
   cursor: pointer;
-  transform: translateX(-100);
 }
 
 .contacts {
