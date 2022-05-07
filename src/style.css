@@ -345,7 +345,7 @@ footer p {
     border-radius: 3px;
   }
   .line.open {
-    background: #fff;
+    background: #dbf2fe;
     transition-duration: 0.3s;
   }
   .line.open.first {
@@ -394,6 +394,7 @@ footer p {
   .nav-links.open {
     height: 100vh;
     pointer-events: all;
+    align-items: center;
     clip-path: circle(1000px at 100% -1%);
     -webkit-clip-path: circle(1000px at 100% -1%);
   }
@@ -428,7 +429,7 @@ footer p {
   .home img {
     display: none;
   }
- 
+
   .about {
     width: 90vw;
     height: 100%;
@@ -460,17 +461,10 @@ footer p {
   .gallery p {
     padding: 0;
   }
-  .image-two {
-    background-size: contain;
-    width: 300px;
-    height: 200px;
-    cursor: pointer;
-  }
-  .image-one {
-    background-size: contain;
-    width: 300px;
-    height: 187px;
-    cursor: pointer;
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
   }
 
   .contacts {
@@ -514,7 +508,7 @@ footer p {
 
   /* Style the submit button with a specific background color etc */
   button[type="submit"] {
-    background-color: #c47dd0;
+    background-color: #dbf2fe;
     font-weight: 600;
     font-size: 1.3rem;
     color: #0c0c0c;
@@ -565,7 +559,7 @@ footer p {
     flex-direction: row;
     width: 100vw;
     justify-content: center;
-    color: #253237;
+    color: #dbf2fe;
     margin: 3rem 0 1rem 0;
   }
   footer p {

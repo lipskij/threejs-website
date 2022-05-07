@@ -2,10 +2,9 @@
 // // Nav bar mobile
 
 const hamburger = document.querySelector(".hamburger");
-console.log(hamburger)
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
-const lines = document.querySelector(".line");
+const lines = document.querySelectorAll(".line");
 
 hamburger.addEventListener("click", () => {
   document.body.classList.toggle("open");
