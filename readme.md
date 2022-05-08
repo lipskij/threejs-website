@@ -1,4 +1,4 @@
-Personal website using Three.js
+Personal website.
 
 [https://lipskij.com](https://lipskij.com)
 
