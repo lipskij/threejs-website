@@ -72,6 +72,10 @@ nav li a:hover {
   transition: 0.3s;
 }
 
+.home button:hover {
+  background-color: #81f5af;
+}
+
 .home button a {
   text-decoration: none;
   color: #141b1e;
@@ -246,7 +250,7 @@ button:disabled {
 
 .container button:hover {
   background-color: #81f5af;
-  color: #0c0c0c;
+  color: #141b1e;
   transition-duration: 0.3s;
 }
 
