@@ -52,6 +52,21 @@ nav li a:hover {
   top: 10px;
   left: 2%;
 }
+#review-me {
+  background-color: #dbf2fe;
+  border: none;
+  color: #141b1e;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#review-me:hover {
+  background-color: #81f5af;
+  transition: 0.3s;
+}
 
 .home {
   height: 100vh;
