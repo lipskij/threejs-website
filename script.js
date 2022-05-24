@@ -38,26 +38,31 @@ const firstText = document.querySelector(".text");
 const secondText = document.querySelector(".text2");
 const thirdText = document.querySelector(".text3");
 const homeButton = document.querySelector(".home-button");
+const logoWindow = document.querySelector(".loading-screen");
 
 onload = () => {
   setTimeout(() => {
+    logoWindow.style.display = "none";
+  }, 900);
+
+  setTimeout(() => {
     firstText.style.opacity = "1";
-  }, 600);
+  }, 1000);
 
   // add styles after one second
   setTimeout(() => {
     secondText.style.opacity = "1";
-  }, 1000);
+  }, 1300);
 
   // add styles after two seconds
   setTimeout(() => {
     thirdText.style.opacity = "1";
-  }, 1500);
+  }, 1700);
 
   // add styles after three seconds
   setTimeout(() => {
     homeButton.style.opacity = "1";
-  }, 1900);
+  }, 2100);
 };
 
 // // Intersection observer for images
