@@ -424,6 +424,16 @@ footer p {
   }
 }
 
+@keyframes nav {
+  from {
+    opacity: 1;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes loading {
   from {
     width: 100%;
@@ -438,7 +448,7 @@ footer p {
     width: 15%;
     opacity: 0.2;
     top: -2.5%;
-    left:9%;
+    left: 9%;
   }
 }
 
@@ -508,6 +518,14 @@ footer p {
     display: flex;
     border-bottom: none;
   }
+
+  nav img {
+    width: 40%
+  }
+
+  #review-me {
+    display: none;
+  }
   .hamburger {
     position: absolute;
     cursor: pointer;
@@ -567,6 +585,15 @@ footer p {
 
   .home {
     text-align: center;
+  }
+
+  .text2,
+  .text {
+    font-size: 2rem;
+    word-break: normal;
+    width: 100%;
+    white-space: pre-wrap;
+    animation: none;
   }
 
   .home img {

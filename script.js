@@ -31,6 +31,21 @@ navLinks.addEventListener("click", () => {
   });
 });
 
+if (window.innerWidth < 430) {
+  window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".nav");
+    if (window.scrollY > 100) {
+      nav.style.background = "rgba(0, 0, 0, 0.8)";
+      nav.style.transition = "background 0.5s ease-in-out";
+    }
+
+    if (window.scrollY < 100) {
+      nav.style.background = "#141b1e";
+      nav.style.transition = "background 0.5s ease-in-out";
+    }
+  });
+}
+
 // ///////////////////////////////////////////////////////////
 
 // // Home page
