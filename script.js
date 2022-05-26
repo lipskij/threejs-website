@@ -59,7 +59,7 @@ onload = () => {
   
   setTimeout(() => {
     logoWindow.style.display = "none";
-  }, 1300);
+  }, 1200);
 
   setTimeout(() => {
     firstText.style.opacity = "1";
