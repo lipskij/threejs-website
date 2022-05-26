@@ -56,9 +56,10 @@ const homeButton = document.querySelector(".home-button");
 const logoWindow = document.querySelector(".loading-screen");
 
 onload = () => {
+  
   setTimeout(() => {
     logoWindow.style.display = "none";
-  }, 900);
+  }, 1300);
 
   setTimeout(() => {
     firstText.style.opacity = "1";

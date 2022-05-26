@@ -52,6 +52,12 @@ nav li a:hover {
   top: 10px;
   left: 2%;
 }
+
+.logo img {
+  animation: nav-logo 0.5s ease-in-out;
+  animation-delay: 0.5s;
+}
+
 #review-me {
   background-color: #dbf2fe;
   border: none;
@@ -77,8 +83,8 @@ nav li a:hover {
   background-color: #141b1e;
   z-index: 2;
   top: 0;
-  animation: loading 0.6s ease-in-out;
-  animation-delay: 0.4s;
+  animation: loading 0.5s ease-in-out;
+  animation-delay: 1s;
 }
 
 .loading-screen img {
@@ -520,7 +526,7 @@ footer p {
   }
 
   nav img {
-    width: 40%
+    width: 40%;
   }
 
   #review-me {
