@@ -1,5 +1,6 @@
 import React from "react";
 
+// @ts-ignore
 const Hamburger = ({ onClick, toggled, className = "" }) => {
   return (
     <button

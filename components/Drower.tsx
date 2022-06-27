@@ -1,5 +1,7 @@
 import React from "react";
 
+
+// @ts-ignore
 const Drawer = ({ children, isOpen, className = "" }) => {
   return (
     <div className={`root ${className} ${isOpen ? "isOpen" : ""}`}>
