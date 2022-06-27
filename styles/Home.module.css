@@ -1,0 +1,86 @@
+.main {
+  background-color: #141b1e;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  color: #dbf2fe;
+  line-height: 1.5;
+}
+
+.homeText {
+  margin: 6rem 0;
+}
+.homeText1,
+.homeText2 {
+  font-size: 3rem;
+}
+
+.homeBtn {
+  background-color: #dbf2fe;
+  border: none;
+  margin-top: 1.5rem;
+  color: #141b1e;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.homeBtn:hover {
+  background-color: #81f5af;
+}
+
+.homeBtn a {
+  text-decoration: none;
+  color: #141b1e;
+}
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #141b1e;
+}
+
+.letter {
+  animation: lol 1s ease-in-out;
+  animation-delay: 1.5s;
+}
+
+.footer p {
+  display: flex;
+  padding: 0.5rem 0 0.5rem 0;
+  justify-content: center;
+  color: #dbf2fe;
+  margin: 0 auto;
+}
+
+@keyframes lol {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (min-width: 48px) {
+  .main {
+    height: 100%;
+  }
+
+  .home {
+    width: 80%;
+    text-align: center;
+  }
+}

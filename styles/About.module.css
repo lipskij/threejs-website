@@ -1,0 +1,40 @@
+.main {
+  background-color: #141b1e;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  color: #dbf2fe;
+  line-height: 2.2;
+}
+
+.about h2 {
+  font-size: 3rem;
+  margin: 5rem 0 2rem 0;
+}
+
+.about p {
+  font-size: 1.5rem;
+}
+
+.footer p {
+  display: flex;
+  padding: 0.5rem 0 0.5rem 0;
+  justify-content: center;
+  color: #dbf2fe;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 5rem
+  }
+ 
+}
