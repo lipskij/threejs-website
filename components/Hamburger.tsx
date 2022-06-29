@@ -1,7 +1,16 @@
 import React from "react";
 
-// @ts-ignore
-const Hamburger = ({ onClick, toggled, className = "" }) => {
+interface HamburgerProps {
+  onClick: () => void;
+  toggled: boolean;
+  className?: string;
+}
+
+const Hamburger: React.FC<HamburgerProps> = ({
+  onClick,
+  toggled,
+  className = "",
+}) => {
   return (
     <button
       aria-label='navigation'

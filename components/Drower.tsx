@@ -1,8 +1,16 @@
 import React from "react";
 
+interface DrawerProps {
+  children: React.ReactNode;
+  isOpen: boolean;
+  className: string;
+}
 
-// @ts-ignore
-const Drawer = ({ children, isOpen, className = "" }) => {
+const Drawer: React.FC<DrawerProps> = ({
+  children,
+  isOpen,
+  className = "",
+}) => {
   return (
     <div className={`root ${className} ${isOpen ? "isOpen" : ""}`}>
       <style jsx>{`
