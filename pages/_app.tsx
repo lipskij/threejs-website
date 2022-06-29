@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           variants={{
             pageInitial: {
               opacity: 0,
+              height: '100vh',
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
