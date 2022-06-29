@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "../styles/Work.module.css";
+import work from "../styles/Work.module.css";
+import about from "../styles/About.module.css";
 import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Nav from "../components/Nav";
@@ -7,11 +8,11 @@ import Image from "next/image";
 
 const Work: NextPage = () => {
   return (
-    <div className={styles.main}>
+    <div className={work.main}>
       <Nav />
-      <section className={styles.work}>
+      <section className={work.work}>
         <h2>WORK</h2>
-        <div className={styles.gallery}>
+        <div className={work.gallery}>
           <motion.a
             whileHover={{
               scale: 1.05,
@@ -31,7 +32,7 @@ const Work: NextPage = () => {
             Creating internal stock management system using NoSQL, MeteorJs and
             React. Using AWS and working with CI/CD.
           </p>
-          <div className={styles.lines}></div>
+          <div className={work.lines}></div>
           <motion.a
             whileHover={{
               scale: 1.05,
@@ -57,7 +58,7 @@ const Work: NextPage = () => {
             was just a learning project,but ended up being quite fun.
           </p>
         </div>
-        <div className={styles.github}>
+        <div className={work.github}>
           <h2>
             More on
             <a
