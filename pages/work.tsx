@@ -1,6 +1,5 @@
 import React from "react";
 import work from "../styles/Work.module.css";
-import about from "../styles/About.module.css";
 import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Nav from "../components/Nav";

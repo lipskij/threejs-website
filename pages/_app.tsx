@@ -1,4 +1,8 @@
 import "../styles/globals.css";
+import "../styles/About.module.css";
+import "../styles/Home.module.css";
+import "../styles/Work.module.css";
+import "../styles/Contacts.module.css";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
@@ -41,7 +45,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           variants={{
             pageInitial: {
               opacity: 0,
-              height: '100vh',
+              height: "100vh",
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
@@ -66,8 +70,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </motion.div>
       </AnimatePresence>
       <footer className={styles.footer}>
-          <p>Made by Emil Lipskij 2022</p>
-        </footer>
+        <p>Made by Emil Lipskij 2022</p>
+      </footer>
     </motion.div>
   );
 }

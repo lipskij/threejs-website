@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import React from "react";
 import Nav from "../components/Nav";
 import about from "../styles/About.module.css";
-import work from '../styles/Work.module.css';
 
 const About: NextPage = () => {
   return (
