@@ -4,7 +4,7 @@ This is my personal website made using Next.js.
 
 www.lipskij.com
 
-# Had to remove css module styling.
-# Instead used Next.js Styled JSX tags.
+Had to remove css module styling.
+Instead used Next.js Styled JSX tags.
 
 Not my prefered way of styling. But it works and no need for hacky code.
