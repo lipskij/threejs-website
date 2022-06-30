@@ -1,12 +1,40 @@
 import "../styles/globals.css";
-import "../styles/About.module.css";
-import "../styles/Home.module.css";
-import "../styles/Work.module.css";
-import "../styles/Contacts.module.css";
+
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
+import Router from "next/router";
+import { useEffect } from "react";
+
+export const OPACITY_EXIT_DURATION = 1;
+
+const routeChange = () => {
+  const tempFix = () => {
+    const elements = document.querySelectorAll('style[media="x"]');
+    elements.forEach((elem) => elem.removeAttribute("media"));
+    setTimeout(() => {
+      elements.forEach((elem) => elem.remove());
+    }, OPACITY_EXIT_DURATION * 1000);
+  };
+  tempFix();
+};
+
+export const useTransitionFix = () => {
+  useEffect(() => {
+    Router.events.on("routeChangeComplete", routeChange);
+    Router.events.on("routeChangeStart", routeChange);
+
+    return () => {
+      Router.events.off("routeChangeComplete", routeChange);
+      Router.events.off("routeChangeStart", routeChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    Router.router?.push(Router.router?.pathname);
+  }, []);
+};
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
