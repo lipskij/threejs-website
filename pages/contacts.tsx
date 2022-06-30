@@ -137,6 +137,15 @@ const Contacts: NextPage = () => {
           color: #dbf2fe;
           margin: 0 auto;
         }
+        @media screen and (max-width: 480px) {
+          .contacts {
+            width: 100%;
+            height: 85vh;
+          }
+          .container {
+            width: 80vw;
+          }
+        }
       `}</style>
       <Nav />
 

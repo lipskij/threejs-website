@@ -83,13 +83,17 @@
   }
 }
 
-@media screen and (max-width: 48px) {
+@media screen and (max-width: 480px) {
   .main {
     height: 100%;
   }
 
   .home {
     width: 80%;
+    height: 50vh;
     text-align: center;
+  }
+  .homeText {
+    margin: 6rem 0 0 0;
   }
 }

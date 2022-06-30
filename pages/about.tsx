@@ -35,6 +35,13 @@ const About: NextPage = () => {
           color: #dbf2fe;
           margin: 0 auto;
         }
+        @media screen and (max-width: 480px) {
+          .about {
+            width: 80%;
+            text-align: center;
+            margin-bottom: 5rem;
+          }
+        }
       `}</style>
       <Nav />
       <section className='about'>

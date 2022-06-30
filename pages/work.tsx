@@ -63,6 +63,33 @@ const Work: NextPage = () => {
           color: #dbf2fe;
           margin: 0 auto;
         }
+        @media screen and (max-width: 480px) {
+          .gallery {
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+            gap: 5rem;
+            margin-bottom: 5rem;
+            height: 100%;
+          }
+          .github {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+          }
+
+          .github h2 {
+            align-items: center;
+          }
+          .lines {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 3px;
+            background-color: #dbf2fe;
+          }
+        }
       `}</style>
       <Nav />
       <section className='work'>

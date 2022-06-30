@@ -13,6 +13,10 @@ const Home: NextPage = () => {
       container.style.height = `${height}px`;
       container.style.width = `${width}px`;
     }
+
+    if (container && width < 480) {
+      container.style.height = `${height - 50}px`;
+    }
   }, []);
 
   return (

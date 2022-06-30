@@ -46,7 +46,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             pageInitial: {
               opacity: 0,
               height: "100vh",
-              transform: "translateY(0)",
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
@@ -54,6 +53,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             },
             pageAnimate: {
               opacity: 1,
+              transform: "translateY(0)",
               transition: {
                 duration: 0.3,
               },
