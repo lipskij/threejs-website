@@ -4,9 +4,12 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
+import Loader from "../components/Loader";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
+
+  const pathname = url.split("/")[3];
 
   return (
     <motion.div
@@ -31,7 +34,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <AnimatePresence
         exitBeforeEnter
-        initial={false}
+        // initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >
         <motion.div
@@ -43,6 +46,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             pageInitial: {
               opacity: 0,
               height: "100vh",
+              transform: "translateY(0)",
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
@@ -64,11 +68,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           }}
         >
           <Component {...pageProps} canonical={url} key={url} />
+          <footer className={styles.footer}>
+            <p>Made by Emil Lipskij 2022</p>
+          </footer>
         </motion.div>
       </AnimatePresence>
-      <footer className={styles.footer}>
-        <p>Made by Emil Lipskij 2022</p>
-      </footer>
     </motion.div>
   );
 }

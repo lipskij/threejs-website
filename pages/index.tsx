@@ -2,12 +2,23 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
 import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    const height = window.innerHeight;
+    const width = window.innerWidth;
+    const container = document.querySelector<HTMLDivElement>(".container");
+    if (container) {
+      container.style.height = `${height}px`;
+      container.style.width = `${width}px`;
+    }
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <main className={styles.main}>
-        <Loader data-aos-once='true' />
+        <Loader />
         <Nav />
         <section className={styles.home}>
           <div className={styles.homeText}>
