@@ -4,12 +4,9 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
-import Loader from "../components/Loader";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
-
-  const pathname = url.split("/")[3];
 
   return (
     <motion.div
@@ -34,7 +31,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <AnimatePresence
         exitBeforeEnter
-        // initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
       >
         <motion.div

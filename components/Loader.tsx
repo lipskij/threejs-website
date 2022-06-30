@@ -50,7 +50,7 @@ const Loader = () => {
       initial='hidden'
       animate='visible'
       transition={{
-        default: { duration: 1, ease: "easeInOut", delay: 1.5 },
+        default: { duration: 0.5, ease: "easeInOut", delay: 1.5 },
       }}
     >
       <motion.svg
@@ -70,7 +70,7 @@ const Loader = () => {
           initial='hidden'
           animate='visible'
           transition={{
-            default: { duration: 2, ease: "easeInOut", delay: 0.19 },
+            default: { duration: 1.5, ease: "easeInOut", delay: 0.19 },
           }}
         />
       </motion.svg>

@@ -52,7 +52,7 @@
 }
 
 .letter {
-  animation: lol 1s ease-in-out;
+  animation: letter 0.5s ease-in-out;
   animation-delay: 1.5s;
 }
 
@@ -74,7 +74,7 @@
   }
 }
 
-@keyframes lol {
+@keyframes letter {
   from {
     transform: translateX(0);
   }

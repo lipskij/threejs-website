@@ -23,7 +23,7 @@ const Drawer: React.FC<DrawerProps> = ({
           right: 0;
           bottom: 0;
           top: 0;
-          transform: translateY(-100%);
+          transform: translateX(-100%);
           transition: transform 300ms;
           z-index: 2;
         }
