@@ -7,11 +7,67 @@ import Image from "next/image";
 
 const Work: NextPage = () => {
   return (
-    <div className={work.main}>
+    <div className='main'>
+      <style jsx>{`
+        .main {
+          background-color: #141b1e;
+        }
+
+        .work {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          width: 80%;
+          height: 100%;
+          margin: 0 auto;
+          color: #dbf2fe;
+          line-height: 2.2;
+        }
+
+        .work h2 {
+          font-size: 3rem;
+          text-align: center;
+          margin: 5rem 0;
+        }
+
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          margin: 0 auto;
+          width: 100%;
+          height: 100vh;
+        }
+
+        .gallery p {
+          font-size: 1.5rem;
+        }
+
+        .github a {
+          text-decoration: none;
+          color: #dbf2fe;
+          transition: 0.3s;
+        }
+
+        .github a:hover {
+          color: #81f5af;
+          transition: 0.3s;
+        }
+
+        .lines {
+          display: none;
+        }
+        .footer p {
+          display: flex;
+          justify-content: center;
+          color: #dbf2fe;
+          margin: 0 auto;
+        }
+      `}</style>
       <Nav />
-      <section className={work.work}>
+      <section className='work'>
         <h2>WORK</h2>
-        <div className={work.gallery}>
+        <div className='gallery'>
           <motion.a
             whileHover={{
               scale: 1.05,
@@ -31,7 +87,7 @@ const Work: NextPage = () => {
             Creating internal stock management system using NoSQL, MeteorJs and
             React. Using AWS and working with CI/CD.
           </p>
-          <div className={work.lines}></div>
+          <div className='lines'></div>
           <motion.a
             whileHover={{
               scale: 1.05,
@@ -57,7 +113,7 @@ const Work: NextPage = () => {
             was just a learning project,but ended up being quite fun.
           </p>
         </div>
-        <div className={work.github}>
+        <div className='github'>
           <h2>
             More on
             <a
