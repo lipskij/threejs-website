@@ -4,6 +4,7 @@ This is my personal website made using Next.js.
 
 www.lipskij.com
 
+Page transition animation was not working properly.
 Had to remove css module styling.
 Instead used Next.js Styled JSX tags.
 
