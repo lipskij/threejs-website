@@ -5,22 +5,8 @@ import Loader from "../components/Loader";
 import { useEffect } from "react";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    const height = window.innerHeight;
-    const width = window.innerWidth;
-    const container = document.querySelector<HTMLDivElement>(".container");
-    if (container) {
-      container.style.height = `${height}px`;
-      container.style.width = `${width}px`;
-    }
-
-    if (container && width < 480) {
-      container.style.height = `${height - 50}px`;
-    }
-  }, []);
-
   return (
-    <div className='container'>
+    <div>
       <main className={styles.main}>
         <Loader />
         <Nav />
