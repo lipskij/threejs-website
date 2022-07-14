@@ -164,7 +164,7 @@ const Contacts: NextPage = () => {
               onChange={(e) => setText(e.target.value)}
             />
             <input
-              type='email'
+              type='text'
               className='email'
               name='email'
               placeholder='Your email..'
@@ -186,10 +186,9 @@ const Contacts: NextPage = () => {
             ></textarea>
 
             <button
+              type='submit'
               className='contactButton'
               disabled={disabled}
-              type='submit'
-              value='Submit'
               style={
                 disabled
                   ? {
