@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
 import Loader from "../components/Loader";
-import { useEffect } from "react";
 
 const Home: NextPage = () => {
   return (

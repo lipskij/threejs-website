@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           name='description'
           content='Personal website of Emil Lipskij front end developer'
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/favicon2.ico' />
       </Head>
       <AnimatePresence
         exitBeforeEnter
