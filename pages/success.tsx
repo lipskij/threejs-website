@@ -50,6 +50,7 @@ const Success: NextPage = () => {
             background-color: #141b1e;
             display: flex;
             justify-content: center;
+            height: 100vh;
           }
           .main h2,
           .main p {
