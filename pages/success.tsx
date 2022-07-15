@@ -50,7 +50,6 @@ const Success: NextPage = () => {
             background-color: #141b1e;
             display: flex;
             justify-content: center;
-            height: 100vh;
           }
           .main h2,
           .main p {
@@ -61,10 +60,12 @@ const Success: NextPage = () => {
           }
 
           @media (max-width: 480px) {
+            .main {
+              height: 100vh;
+            }
             .button {
-              position: absolute;
-              top: 65%;
-              left: 33%;
+              display: flex;
+              justify-content: center;
             }
           }
         `}</style>
@@ -75,20 +76,34 @@ const Success: NextPage = () => {
             <Link href='/'>
               <a>
                 <motion.button
-                  style={{
-                    position: "absolute",
-                    left: "40%",
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    cursor: "pointer",
-                    alignSelf: "center",
-                    padding: "1rem",
-                    backgroundColor: "#dbf2fe",
-                    color: "#141b1e",
-                    border: "none",
-                    borderRadius: "10px",
-                    fontSize: "1.3rem",
-                  }}
+                  style={
+                    width > 480
+                      ? {
+                          position: "absolute",
+                          left: "40%",
+                          top: "50%",
+                          transform: "translateY(-50%)",
+                          cursor: "pointer",
+                          alignSelf: "center",
+                          padding: "1rem",
+                          backgroundColor: "#dbf2fe",
+                          color: "#141b1e",
+                          border: "none",
+                          borderRadius: "10px",
+                          fontSize: "1.3rem",
+                        }
+                      : {
+                          position: "relative",
+                          cursor: "pointer",
+                          margin: "0 auto",
+                          padding: "1rem",
+                          backgroundColor: "#dbf2fe",
+                          color: "#141b1e",
+                          border: "none",
+                          borderRadius: "10px",
+                          fontSize: "1.3rem",
+                        }
+                  }
                   animate={{
                     x: [0, 10, 0],
                     rotate: [0, 10, 0, 10, 0],
