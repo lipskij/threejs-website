@@ -151,7 +151,7 @@ const Contacts: NextPage = () => {
       <section className='contacts'>
         <h2>CONTACTS</h2>
         <div className='container'>
-          <form name='contact' method='POST' data-netlify='true'>
+          <form name='contact' method='POST' data-netlify='true' action='/success'>
             <input type='hidden' name='form-name' value='contact' />
             <input
               type='text'
