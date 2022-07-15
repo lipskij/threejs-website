@@ -7,7 +7,6 @@ const Contacts: NextPage = () => {
   const [text, setText] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
@@ -153,7 +152,7 @@ const Contacts: NextPage = () => {
         <h2>CONTACTS</h2>
         <div className='container'>
           <form name='emil_contact_form' method='POST' data-netlify='true'>
-            <p>{error}</p>
+            <input type='hidden' name='form-name' value='contact' />
             <input
               type='text'
               className='name'
