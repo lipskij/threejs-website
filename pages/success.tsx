@@ -58,24 +58,43 @@ const Success: NextPage = () => {
             margin: 6rem 0 5rem 0;
             text-align: center;
           }
-          .main button {
-            padding: 1rem;
-            background-color: #dbf2fe;
-            color: #141b1e;
-            border: none;
-            position: absolute;
-            border-radius: 10px;
-            align-self: center;
-            font-size: 1.3rem;
-            left: 33%;
-          }
         `}</style>
         <div className='contacts'>
           <h2>Thank you for your message!</h2>
           <p>I will get back to you as soon as possible.</p>
           <Link href='/'>
             <a>
-              <button>Go back to the homepage</button>
+              <motion.button
+                style={{
+                  position: "absolute",
+                  left: "40%",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  alignSelf: "center",
+                  padding: "1rem",
+                  backgroundColor: "#dbf2fe",
+                  color: "#141b1e",
+                  border: "none",
+                  borderRadius: "10px",
+                  fontSize: "1.3rem",
+                }}
+                className='button'
+                animate={{
+                  x: [0, 10, 0],
+                  rotate: [0, 10, 0, 10, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    loop: Infinity,
+                    repeatDelay: 0.5,
+                    repeatType: "reverse",
+                    yoyo: Infinity,
+                  },
+                }}
+              >
+                Go back to the homepage
+              </motion.button>
             </a>
           </Link>
         </div>
