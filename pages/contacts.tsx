@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import { NextPage } from "next/types";
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-import styles from "../styles/Contacts.module.css";
 
 const Contacts: NextPage = () => {
   const [text, setText] = useState("");
@@ -151,7 +151,12 @@ const Contacts: NextPage = () => {
       <section className='contacts'>
         <h2>CONTACTS</h2>
         <div className='container'>
-          <form name='contact' method='POST' data-netlify='true' action='/success'>
+          <form
+            name='contact'
+            method='POST'
+            data-netlify='true'
+            action='/success'
+          >
             <input type='hidden' name='form-name' value='contact' />
             <input
               type='text'
@@ -184,7 +189,22 @@ const Contacts: NextPage = () => {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
 
-            <button
+            <motion.button
+              animate={
+                !disabled
+                  ? {
+                      rotate: [0, -5, 0, 5, 0, -5, 0],
+                      scale: [1, 1.05, 1, 0.95, 1],
+
+                      transition: {
+                        duration: 0.8,
+                        ease: "easeInOut",
+                        loop: Infinity,
+                        repeatDelay: 0.9,
+                      },
+                    }
+                  : {}
+              }
               type='submit'
               className='contactButton'
               disabled={disabled}
@@ -194,12 +214,27 @@ const Contacts: NextPage = () => {
                       background: "grey",
                       color: "#fefefe",
                       cursor: "not-allowed",
+                      padding: "1rem",
+                      borderRadius: "10px",
+                      border: "none",
+                      fontWeight: "600",
+                      fontSize: "1.3rem",
                     }
-                  : {}
+                  : {
+                      background: "#dbf2fe",
+                      color: "#141b1e",
+                      cursor: "pointer",
+                      padding: "1rem",
+                      borderRadius: "10px",
+                      border: "none",
+                      fontWeight: "600",
+                      fontSize: "1.3rem",
+                      boxShadow: "2px 2px 10px 2px #5bf1f6",
+                    }
               }
             >
               SEND
-            </button>
+            </motion.button>
           </form>
         </div>
       </section>

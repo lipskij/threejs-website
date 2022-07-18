@@ -1,9 +1,21 @@
 import React from "react";
-import work from "../styles/Work.module.css";
 import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Nav from "../components/Nav";
 import Image from "next/image";
+
+const projects = [
+  {
+    href: "https://skidoc.fr/",
+    src: "/images/ski.webp",
+    text: "Creating internal stock management system using NoSQL, MeteorJs and React. Using AWS and working with CI/CD.",
+  },
+  {
+    href: "https://vaskichi.eu.meteorapp.com/",
+    src: "/images/vaskichi.webp",
+    text: "Online rock paper scissors game using MeteorJs, React, MongoDB. This  was just a learning project,but ended up being quite fun.",
+  },
+];
 
 const Work: NextPage = () => {
   return (
@@ -34,9 +46,10 @@ const Work: NextPage = () => {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 1rem;
-          margin: 0 auto;
+
           width: 100%;
-          height: 100vh;
+          height: 100%;
+          margin-bottom: 10rem;
         }
 
         .gallery p {
@@ -94,63 +107,54 @@ const Work: NextPage = () => {
       <Nav />
       <section className='work'>
         <h2>WORK</h2>
-        <div className='gallery'>
-          <motion.a
-            whileHover={{
-              scale: 1.05,
-              transition: {
-                duration: 0.3,
-                ease: "easeInOut",
-              },
-            }}
-            rel='noopener noreferrer'
-            aria-label='skidoc'
-            href='https://skidoc.fr/'
-            target='_blank'
-          >
-            <Image src='/images/ski.webp' alt='ski' width={450} height={250} />
-          </motion.a>
-          <p>
-            Creating internal stock management system using NoSQL, MeteorJs and
-            React. Using AWS and working with CI/CD.
-          </p>
-          <div className='lines'></div>
-          <motion.a
-            whileHover={{
-              scale: 1.05,
-              transition: {
-                duration: 0.3,
-                ease: "easeInOut",
-              },
-            }}
-            rel='noopener noreferrer'
-            aria-label='rps'
-            href='https://vaskichi.eu.meteorapp.com/'
-            target='_blank'
-          >
-            <Image
-              src='/images/vaskichi.webp'
-              alt='rock-paper-siccors'
-              width={450}
-              height={250}
-            />
-          </motion.a>
-          <p>
-            Online rock paper scissors game using MeteorJs, React, MongoDB. This
-            was just a learning project,but ended up being quite fun.
-          </p>
-        </div>
+        {projects.map((i) => (
+          <div key={i.src} className='gallery'>
+            <motion.a
+              key={i.src}
+              whileHover={{
+                scale: 1.05,
+                transition: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              }}
+              style={{ color: "#dbf2fe", textDecoration: "none" }}
+              rel='noopener noreferrer'
+              aria-label='skidoc'
+              href={i.href}
+              target='_blank'
+            >
+              <Image src={i.src} alt='ski' width={450} height={250} />
+            </motion.a>
+            <p>{i.text}</p>
+            <div className='lines'></div>
+          </div>
+        ))}
         <div className='github'>
           <h2>
             More on
-            <a
-              rel='noopener noreferrer'
-              aria-label='github-link'
-              href='https://github.com/lipskij'
-              target='_blank'
+            <motion.div
+              animate={{
+                rotate: [0, -5, 0, 5, 0, -5, 0],
+                scale: [1, 1.05, 1, 0.95, 1],
+                transition: {
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  loop: Infinity,
+                  repeatDelay: 1,
+                  delay: 1,
+                },
+              }}
             >
-              <i> GitHub</i>
-            </a>
+              <a
+                rel='noopener noreferrer'
+                aria-label='github-link'
+                href='https://github.com/lipskij'
+                target='_blank'
+              >
+                <i> GitHub</i>
+              </a>
+            </motion.div>
           </h2>
         </div>
       </section>
