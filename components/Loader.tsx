@@ -34,11 +34,11 @@ const Loader = () => {
   const loader = {
     hidden: {
       scale: 1,
-      width: "100vw",
-      height: "100vh",
+      opacity: 1,
     },
     visible: {
-      width: 0,
+      opacity: 0,
+      scale: [1, 1, 1, 1, 0],
       zIndex: 1,
     },
   };
@@ -50,7 +50,7 @@ const Loader = () => {
       initial='hidden'
       animate='visible'
       transition={{
-        default: { duration: 0.5, ease: "easeInOut", delay: 1.5 },
+        default: { duration: 1, ease: "easeInOut", delay: 1.5 },
       }}
     >
       <motion.svg

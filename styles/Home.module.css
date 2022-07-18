@@ -52,11 +52,6 @@
   background-color: #141b1e;
 }
 
-.letter {
-  animation: letter 0.5s ease-in-out;
-  animation-delay: 1.5s;
-}
-
 .footer p {
   display: flex;
   padding: 0.5rem 0 0.5rem 0;
@@ -64,6 +59,11 @@
   color: #dbf2fe;
   margin: 0 auto;
   animation: footer 2s ease-in-out;
+}
+
+.letter {
+  animation: letter 2s ease-in-out;
+  animation-delay: 1s;
 }
 
 @keyframes footer {
@@ -77,10 +77,10 @@
 
 @keyframes letter {
   from {
-    transform: translateX(0);
+    transform: scale(1);
   }
   to {
-    transform: translateX(-100%);
+    transform: scale(5);
   }
 }
 

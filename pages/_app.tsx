@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             },
             pageExit: {
               opacity: 0,
-              transform: "translateX(-100px)",
+              transform: "translateY(-100px)",
               transition: {
                 duration: 0.3,
               },

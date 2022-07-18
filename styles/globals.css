@@ -56,7 +56,6 @@ nav li a:hover {
   justify-content: center;
   color: #dbf2fe;
   margin: 0 auto;
- 
 }
 
 @media screen and (max-width: 480px) {
@@ -93,8 +92,10 @@ nav li a:hover {
   .isOpen ul {
     width: 100%;
     display: flex;
+    height: 80%;
     align-items: center;
     background-color: #141b1e;
-    justify-content: space-evenly;
+    line-height: 3;
+    justify-content: center;
   }
 }
