@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Nav from "../components/Nav";
 import Image from "next/image";
+import about from "../styles/Home.module.css";
 
 const projects = [
   {
@@ -56,17 +57,6 @@ const Work: NextPage = () => {
           font-size: 1.5rem;
         }
 
-        .github a {
-          text-decoration: none;
-          color: #dbf2fe;
-          transition: 0.3s;
-        }
-
-        .github a:hover {
-          color: #81f5af;
-          transition: 0.3s;
-        }
-
         .lines {
           display: none;
         }
@@ -84,16 +74,7 @@ const Work: NextPage = () => {
             margin-bottom: 5rem;
             height: 100%;
           }
-          .github {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-          }
 
-          .github h2 {
-            align-items: center;
-          }
           .lines {
             display: flex;
             justify-content: center;
@@ -107,6 +88,15 @@ const Work: NextPage = () => {
       <Nav />
       <section className='work'>
         <h2>WORK</h2>
+        <div className={about.hexagons1}>
+          <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
+            <g>
+              <polygon points='0,186.26 107.264,247.871 214.529,186.26 214.529,63.04 107.264,1.429 0,63.04 	' />
+              <polygon points='275.471,63.04 275.471,186.26 382.735,247.871 490,186.26 490,63.04 382.735,1.429 	' />
+              <polygon points='137.954,303.74 137.954,426.96 245.219,488.571 352.484,426.96 352.484,303.74 245.219,242.13 	' />
+            </g>
+          </svg>
+        </div>
         {projects.map((i) => (
           <div key={i.src} className='gallery'>
             <motion.a
@@ -146,14 +136,28 @@ const Work: NextPage = () => {
                 },
               }}
             >
-              <a
-                rel='noopener noreferrer'
-                aria-label='github-link'
-                href='https://github.com/lipskij'
-                target='_blank'
-              >
-                <i> GitHub</i>
-              </a>
+              <motion.button
+              animate={{
+                rotate: [0, -20, 0, 20, 0, -20, 0],
+                scale: [1, 1.2, 1, 0.8, 1],
+                boxShadow: "2px 2px 10px 2px #5bf1f6",
+                transition: {
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  loop: Infinity,
+                  repeatDelay: 1,
+                  delay: 1,
+                },
+              }}className={about.homeBtn}>
+                <a
+                  rel='noopener noreferrer'
+                  aria-label='github-link'
+                  href='https://github.com/lipskij'
+                  target='_blank'
+                >
+                  <i> GitHub</i>
+                </a>
+              </motion.button>
             </motion.div>
           </h2>
         </div>

@@ -158,6 +158,7 @@ const Contacts: NextPage = () => {
             data-netlify='true'
             action='/success'
           >
+            
             <input type='hidden' name='form-name' value='contact' />
             <input
               type='text'
