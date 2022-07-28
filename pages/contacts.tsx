@@ -143,6 +143,7 @@ const Contacts: NextPage = () => {
           }
           .container {
             width: 80vw;
+            height: 100vh;
           }
         }
       `}</style>

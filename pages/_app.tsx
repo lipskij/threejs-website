@@ -9,18 +9,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
 
   return (
-    <motion.div
-      animate='background'
-      variants={{
-        background: {
-          transform: "rotate(360deg)",
-          transition: {
-            duration: 0.3,
-          },
-        },
-      }}
-      style={{ backgroundColor: "#141b1e" }}
-    >
+    <div style={{ backgroundColor: "#141b1e" }}>
       <Head>
         <title>Emil Lipskij</title>
         <meta
@@ -69,7 +58,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </footer>
         </motion.div>
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
 
