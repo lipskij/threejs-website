@@ -108,7 +108,6 @@ const Contacts: NextPage = () => {
           background: inherit;
           overflow: hidden;
           padding: 20px;
-          height: 70vh;
           width: 60vw;
           margin: 0 auto;
         }
@@ -139,11 +138,11 @@ const Contacts: NextPage = () => {
         @media screen and (max-width: 480px) {
           .contacts {
             width: 100%;
-            height: 85vh;
+            height: 100%;
+            padding-bottom: 5rem;
           }
           .container {
             width: 80vw;
-            height: 100vh;
           }
         }
       `}</style>
@@ -158,7 +157,6 @@ const Contacts: NextPage = () => {
             data-netlify='true'
             action='/success'
           >
-            
             <input type='hidden' name='form-name' value='contact' />
             <input
               type='text'
