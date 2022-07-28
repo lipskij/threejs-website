@@ -12,6 +12,11 @@ const projects = [
     text: "Creating internal stock management system using NoSQL, MeteorJs and React. Using AWS and working with CI/CD.",
   },
   {
+    href: "https://easyproduction.org",
+    src: "/images/easy.webp",
+    text: "Film maker and producer personal website to showcase work and projects. For this website I used Nextjs,Framer motion for animations and page transitions.",
+  },
+  {
     href: "https://vaskichi.eu.meteorapp.com/",
     src: "/images/vaskichi.webp",
     text: "Online rock paper scissors game using MeteorJs, React, MongoDB. This  was just a learning project,but ended up being quite fun.",
@@ -57,9 +62,6 @@ const Work: NextPage = () => {
           font-size: 1.5rem;
         }
 
-        .lines {
-          display: none;
-        }
         .footer p {
           display: flex;
           justify-content: center;
@@ -98,9 +100,9 @@ const Work: NextPage = () => {
           </svg>
         </div>
         {projects.map((i) => (
-          <div key={i.src} className='gallery'>
+          <div key={i.href} className='gallery'>
             <motion.a
-              key={i.src}
+              key={i.href}
               whileHover={{
                 scale: 1.05,
                 transition: {
@@ -137,18 +139,20 @@ const Work: NextPage = () => {
               }}
             >
               <motion.button
-              animate={{
-                rotate: [0, -20, 0, 20, 0, -20, 0],
-                scale: [1, 1.2, 1, 0.8, 1],
-                boxShadow: "2px 2px 10px 2px #5bf1f6",
-                transition: {
-                  duration: 0.5,
-                  ease: "easeInOut",
-                  loop: Infinity,
-                  repeatDelay: 1,
-                  delay: 1,
-                },
-              }}className={about.homeBtn}>
+                animate={{
+                  rotate: [0, -20, 0, 20, 0, -20, 0],
+                  scale: [1, 1.2, 1, 0.8, 1],
+                  boxShadow: "2px 2px 10px 2px #5bf1f6",
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    loop: Infinity,
+                    repeatDelay: 1,
+                    delay: 1,
+                  },
+                }}
+                className={about.homeBtn}
+              >
                 <a
                   rel='noopener noreferrer'
                   aria-label='github-link'
