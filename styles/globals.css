@@ -85,7 +85,7 @@ nav li a:hover {
     text-decoration: none;
     color: #dbf2fe;
     transition-duration: 0.3s;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .isOpen ul {

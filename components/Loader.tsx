@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 
 const Loader = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [sceenHeight, setScreenHeight] = useState(0);
-
-  useEffect(() => {
-    setScreenHeight(window.innerHeight);
-    setScreenWidth(window.innerWidth);
-
-    const timer = setTimeout(() => {
-      setScreenHeight(0);
-      setScreenWidth(0);
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   const icon = {
     hidden: {
       pathLength: 0,
@@ -53,8 +36,8 @@ const Loader = () => {
       }}
     >
       <motion.svg
-        width={'100%'}
-        height={'100%'}
+        width={"100%"}
+        height={"100%"}
         viewBox='-75 -55 200 171'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
