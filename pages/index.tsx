@@ -7,26 +7,26 @@ import { motion } from "framer-motion";
 const Home: NextPage = () => {
   const text = {
     hidden: {
+      scale: 0,
       opacity: 0,
-      y: -100,
     },
     visible: {
-      opacity: 1,
-      y: 0,
+      scale: 1,
+      opacity: [0, 1, 1, 1],
     },
   };
   return (
     <div>
       <main className={styles.main}>
-        <Loader />
         <Nav />
+        <Loader />
         <section className={styles.home}>
           <motion.div
             variants={text}
             initial='hidden'
             animate='visible'
             transition={{
-              default: { duration: 1, ease: "easeInOut", delay: 1.5 },
+              default: { duration: 1.5, ease: "easeInOut", delay: 1.2 },
             }}
             className={styles.homeText}
           >

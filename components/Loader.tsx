@@ -38,8 +38,7 @@ const Loader = () => {
     },
     visible: {
       opacity: 0,
-      scale: [1, 1, 1, 1, 0],
-      zIndex: 1,
+      scale: 0,
     },
   };
 
@@ -50,12 +49,12 @@ const Loader = () => {
       initial='hidden'
       animate='visible'
       transition={{
-        default: { duration: 1, ease: "easeInOut", delay: 1.5 },
+        default: { duration: 1.5, ease: "easeInOut", delay: 1 },
       }}
     >
       <motion.svg
-        width={screenWidth}
-        height={sceenHeight}
+        width={'100%'}
+        height={'100%'}
         viewBox='-75 -55 200 171'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
@@ -70,7 +69,7 @@ const Loader = () => {
           initial='hidden'
           animate='visible'
           transition={{
-            default: { duration: 1.5, ease: "easeInOut", delay: 0.19 },
+            default: { duration: 1.2, ease: "easeInOut", delay: 0.2 },
           }}
         />
       </motion.svg>
