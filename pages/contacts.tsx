@@ -108,7 +108,7 @@ const Contacts: NextPage = () => {
           background: inherit;
           overflow: hidden;
           padding: 20px;
-          height: 50vh;
+          height: 70vh;
           width: 60vw;
           margin: 0 auto;
         }
