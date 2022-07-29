@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 
 const Loader = () => {
-  const [display, setDisplay] = React.useState("flex");
+  useEffect(() => {
+    const timer = setTimeout(
+      () => {
+        const svg = document.querySelector("#loader");
+        if (svg && window.innerWidth < 480) {
+          svg.remove();
+        }
+      },
+
+      3000
+    );
+    return () => clearTimeout(timer);
+  }, []);
+
   const icon = {
     hidden: {
       pathLength: 0,
@@ -12,7 +25,6 @@ const Loader = () => {
     visible: {
       pathLength: 1,
       opacity: [0, 1, 1, 1, 0],
-      display: display,
     },
   };
 
@@ -22,21 +34,18 @@ const Loader = () => {
     },
     visible: {
       opacity: 0,
-      display: display,
     },
   };
 
   return (
     <motion.div
+      id='loader'
       className={styles.loader}
       variants={loader}
       initial='hidden'
       animate='visible'
       transition={{
         default: { duration: 1.5, ease: "easeInOut", delay: 1 },
-      }}
-      onAnimationEnd={() => {
-        setDisplay("none");
       }}
     >
       <motion.svg
