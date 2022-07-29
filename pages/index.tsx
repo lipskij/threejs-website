@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
 import Loader from "../components/Loader";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const text = {
@@ -48,7 +49,7 @@ const Home: NextPage = () => {
               }}
               className={styles.homeBtn}
             >
-              <a href='/contacts'> Contact </a>
+              <Link href='/contacts'>Contacts</Link>
             </motion.button>
           </motion.div>
           <div className={styles.hexagons1}>
