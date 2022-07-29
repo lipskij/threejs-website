@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
 import Loader from "../components/Loader";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Button from "../components/Button";
 
 const Home: NextPage = () => {
   const text = {
@@ -34,25 +34,9 @@ const Home: NextPage = () => {
               I&apos;m a front-end web developer.
             </h2>
             <p>I create websites and web applications</p>
-            <motion.button
-              type='button'
-              animate={{
-                rotate: [0, -20, 0, 20, 0, -20, 0],
-                scale: [1, 1.2, 1, 0.8, 1],
-                boxShadow: "2px 2px 10px 2px #5bf1f6",
-                transition: {
-                  duration: 0.5,
-                  ease: "easeInOut",
-                  loop: Infinity,
-                  repeatDelay: 1,
-                  delay: 1,
-                },
-              }}
-              className={styles.homeBtn}
-            >
-              <Link href='/contacts'>Contacts</Link>
-            </motion.button>
+            <Button />
           </motion.div>
+          
           <div className={styles.hexagons1}>
             <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
               <g>

@@ -67,7 +67,7 @@ const Work: NextPage = () => {
           width: 150px;
           height: 150px;
           top: 65%;
-          left: 120px;
+          right: 120px;
           opacity: 30%;
         }
         @media screen and (max-width: 480px) {
