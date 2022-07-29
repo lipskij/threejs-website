@@ -12,7 +12,7 @@ const Loader = () => {
     visible: {
       pathLength: 1,
       opacity: [0, 1, 1, 1, 0],
-      display: display
+      display: display,
     },
   };
 
