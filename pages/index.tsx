@@ -35,6 +35,7 @@ const Home: NextPage = () => {
             </h2>
             <p>I create websites and web applications</p>
             <motion.button
+              type='button'
               animate={{
                 rotate: [0, -20, 0, 20, 0, -20, 0],
                 scale: [1, 1.2, 1, 0.8, 1],

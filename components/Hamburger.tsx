@@ -13,6 +13,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
 }) => {
   return (
     <button
+      type='button'
       aria-label='navigation'
       className={`root ${className}`}
       onClick={onClick}
