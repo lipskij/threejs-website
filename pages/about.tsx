@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import React from "react";
 import Nav from "../components/Nav";
-import about from "../styles/Home.module.css";
 
 const About: NextPage = () => {
   return (
@@ -29,11 +28,13 @@ const About: NextPage = () => {
           font-size: 1.5rem;
         }
 
-        .footer p {
-          display: flex;
-          justify-content: center;
-          color: #dbf2fe;
-          margin: 0 auto;
+        .hexagon {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          top: 45%;
+          left: 0px;
+          opacity: 30%;
         }
         @media screen and (max-width: 480px) {
           .about {
@@ -62,7 +63,7 @@ const About: NextPage = () => {
             </p>
           </div>
         </div>
-        <div className={about.hexagons1}>
+        <div className='hexagon'>
           <svg x='0px' y='0px' viewBox='0 0 490 490' fill='#5bf1f6'>
             <g>
               <polygon points='0,186.26 107.264,247.871 214.529,186.26 214.529,63.04 107.264,1.429 0,63.04 	' />

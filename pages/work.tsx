@@ -62,11 +62,13 @@ const Work: NextPage = () => {
           font-size: 1.5rem;
         }
 
-        .footer p {
-          display: flex;
-          justify-content: center;
-          color: #dbf2fe;
-          margin: 0 auto;
+        .hexagon {
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          top: 65%;
+          left: 120px;
+          opacity: 30%;
         }
         @media screen and (max-width: 480px) {
           .gallery {
@@ -90,7 +92,7 @@ const Work: NextPage = () => {
       <Nav />
       <section className='work'>
         <h2>WORK</h2>
-        <div className={about.hexagons1}>
+        <div className='hexagon'>
           <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
             <g>
               <polygon points='0,186.26 107.264,247.871 214.529,186.26 214.529,63.04 107.264,1.429 0,63.04 	' />

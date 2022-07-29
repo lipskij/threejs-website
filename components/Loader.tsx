@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 
 const Loader = () => {
+  const [display, setDisplay] = React.useState("flex");
   const icon = {
     hidden: {
       pathLength: 0,
@@ -11,17 +12,17 @@ const Loader = () => {
     visible: {
       pathLength: 1,
       opacity: [0, 1, 1, 1, 0],
+      display: display
     },
   };
 
   const loader = {
     hidden: {
-      scale: 1,
       opacity: 1,
     },
     visible: {
       opacity: 0,
-      scale: 0,
+      display: display,
     },
   };
 
@@ -33,6 +34,9 @@ const Loader = () => {
       animate='visible'
       transition={{
         default: { duration: 1.5, ease: "easeInOut", delay: 1 },
+      }}
+      onAnimationEnd={() => {
+        setDisplay("none");
       }}
     >
       <motion.svg
@@ -52,7 +56,7 @@ const Loader = () => {
           initial='hidden'
           animate='visible'
           transition={{
-            default: { duration: 1.2, ease: "easeInOut", delay: 0.2 },
+            default: { duration: 1.5, ease: "easeInOut", delay: 0.2 },
           }}
         />
       </motion.svg>

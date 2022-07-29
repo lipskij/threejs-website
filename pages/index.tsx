@@ -7,11 +7,9 @@ import { motion } from "framer-motion";
 const Home: NextPage = () => {
   const text = {
     hidden: {
-      scale: 0,
       opacity: 0,
     },
     visible: {
-      scale: 1,
       opacity: [0, 1, 1, 1],
     },
   };
@@ -50,7 +48,7 @@ const Home: NextPage = () => {
               }}
               className={styles.homeBtn}
             >
-              <a href='#contacts'> Contact </a>
+              <a href='/contacts'> Contact </a>
             </motion.button>
           </motion.div>
           <div className={styles.hexagons1}>
