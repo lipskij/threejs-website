@@ -7,7 +7,7 @@ const Loader = () => {
     const timer = setTimeout(
       () => {
         const svg = document.querySelector("#loader");
-        if (svg && window.innerWidth < 480) {
+        if (svg) {
           svg.remove();
         }
       },

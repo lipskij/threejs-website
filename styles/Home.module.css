@@ -10,7 +10,7 @@
   height: 100vh;
   margin: 0 auto;
   color: #dbf2fe;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .homeText {
@@ -49,7 +49,7 @@
   width: 200px;
   height: 200px;
   top: 35%;
-  left: -40px;
+  right: 40px;
   opacity: 30%;
 }
 .hexagons2 {
@@ -113,6 +113,7 @@
     width: 80%;
     height: 100vh;
     text-align: center;
+    line-height: 1.5;
   }
   .homeText {
     margin: 6rem 0 0 0;

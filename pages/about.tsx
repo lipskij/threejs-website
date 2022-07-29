@@ -33,7 +33,7 @@ const About: NextPage = () => {
           width: 200px;
           height: 200px;
           top: 45%;
-          left: 0px;
+          right: 40px;
           opacity: 30%;
         }
         @media screen and (max-width: 480px) {
