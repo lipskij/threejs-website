@@ -1,5 +1,5 @@
 // import styles from "./Button.module.css";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { motion, MotionConfig, useMotionValue } from "framer-motion";
 import { Shapes } from "./Shapes";
 import { transition } from "../utils/settings";
@@ -25,7 +25,6 @@ export default function Button() {
         ref={ref}
         initial={false}
         animate={isHover ? "hover" : "rest"}
-        // whileTap='press'
         variants={{
           rest: { scale: 1 },
           hover: { scale: 1.5 },
