@@ -1,8 +1,8 @@
-import styles from "./Button.module.css";
+// import styles from "./Button.module.css";
 import { Suspense, useState } from "react";
 import { motion, MotionConfig, useMotionValue } from "framer-motion";
 import { Shapes } from "./Shapes";
-import { transition } from "../settings";
+import { transition } from "../utils/settings";
 import useMeasure from "react-use-measure";
 import Link from "next/link";
 
@@ -20,27 +20,8 @@ export default function Button() {
 
   return (
     <MotionConfig transition={transition}>
-      <style jsx>{`
-        .blush {
-          position: absolute;
-          bottom: -10px;
-          width: 60px;
-          height: 80px;
-          filter: blur(20px);
-        }
-
-        .blush.pink {
-          right: -5px;
-          background: var(--purple);
-        }
-
-        .blush.blue {
-          left: -5px;
-          background: var(--blue);
-        }
-      `}</style>
       <motion.button
-        className={styles.button}
+        className='button'
         ref={ref}
         initial={false}
         animate={isHover ? "hover" : "rest"}
@@ -67,7 +48,7 @@ export default function Button() {
         }}
       >
         <motion.div
-          className={styles.shapes}
+          className='shapes'
           variants={{
             rest: { opacity: 0 },
             hover: { opacity: 1 },
@@ -75,7 +56,7 @@ export default function Button() {
         >
           <div className='pink blush' />
           <div className='blue blush' />
-          <div className={styles.container}>
+          <div className='container'>
             <Suspense fallback={null}>
               <Shapes
                 isHover={isHover}
@@ -88,7 +69,7 @@ export default function Button() {
         </motion.div>
         <motion.div
           variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
-          className={styles.label}
+          className='label'
         >
           <Link href='/contacts'>Contacts</Link>
         </motion.div>
