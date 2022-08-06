@@ -17,7 +17,7 @@ const projects = [
     text: "Film maker and producer personal website to showcase work and projects. For this website I used Nextjs,Framer motion for animations and page transitions.",
   },
   {
-    href: "https://vaskichi.eu.meteorapp.com/",
+    href: "https://jankenpon.org",
     src: "/images/vaskichi.webp",
     text: "Online rock paper scissors game using MeteorJs, React, MongoDB. This  was just a learning project,but ended up being quite fun.",
   },
