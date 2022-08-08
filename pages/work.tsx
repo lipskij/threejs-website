@@ -118,7 +118,7 @@ const Work: NextPage = () => {
               href={i.href}
               target='_blank'
             >
-              <Image src={i.src} alt='ski' width={450} height={250} />
+              <Image src={i.src} alt='project-images' width={450} height={250} />
             </motion.a>
             <p>{i.text}</p>
             <div className='lines'></div>
