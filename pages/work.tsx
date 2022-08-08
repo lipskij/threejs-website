@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Nav from "../components/Nav";
 import Image from "next/image";
-import about from "../styles/Home.module.css";
+import GitButton from "../components/GitButton";
 
 const projects = [
   {
@@ -45,7 +45,7 @@ const Work: NextPage = () => {
         .work h2 {
           font-size: 3rem;
           text-align: center;
-          margin: 5rem 0;
+          margin: 4rem 0 3rem 0;
         }
 
         .gallery {
@@ -69,6 +69,14 @@ const Work: NextPage = () => {
           top: 65%;
           right: 120px;
           opacity: 30%;
+        }
+        .github {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: 50vh;
+          margin-bottom: 7rem;
         }
         @media screen and (max-width: 480px) {
           .gallery {
@@ -107,6 +115,7 @@ const Work: NextPage = () => {
               key={i.href}
               whileHover={{
                 scale: 1.05,
+                boxShadow: "0px 0px 10px gradient(#5bf1f6 to #dbf2fe)",
                 transition: {
                   duration: 0.3,
                   ease: "easeInOut",
@@ -118,54 +127,20 @@ const Work: NextPage = () => {
               href={i.href}
               target='_blank'
             >
-              <Image src={i.src} alt='project-images' width={450} height={250} />
+              <Image
+                src={i.src}
+                alt='project-images'
+                width={450}
+                height={250}
+              />
             </motion.a>
             <p>{i.text}</p>
             <div className='lines'></div>
           </div>
         ))}
         <div className='github'>
-          <h2>
-            More on
-            <motion.div
-              animate={{
-                rotate: [0, -5, 0, 5, 0, -5, 0],
-                scale: [1, 1.05, 1, 0.95, 1],
-                transition: {
-                  duration: 0.5,
-                  ease: "easeInOut",
-                  loop: Infinity,
-                  repeatDelay: 1,
-                  delay: 1,
-                },
-              }}
-            >
-              <motion.button
-                animate={{
-                  rotate: [0, -20, 0, 20, 0, -20, 0],
-                  scale: [1, 1.2, 1, 0.8, 1],
-                  boxShadow: "2px 2px 10px 2px #5bf1f6",
-                  transition: {
-                    duration: 0.5,
-                    ease: "easeInOut",
-                    loop: Infinity,
-                    repeatDelay: 1,
-                    delay: 1,
-                  },
-                }}
-                className={about.homeBtn}
-              >
-                <a
-                  rel='noopener noreferrer'
-                  aria-label='github-link'
-                  href='https://github.com/lipskij'
-                  target='_blank'
-                >
-                  <i> GitHub</i>
-                </a>
-              </motion.button>
-            </motion.div>
-          </h2>
+          <h2>More on</h2>
+          <GitButton />
         </div>
       </section>
     </div>
