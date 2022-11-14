@@ -55,7 +55,7 @@ const About: NextPage = () => {
               <br />
               Finished Front End Masters online courses.
               <br />
-              I enjoy creating responsive,fast-loading, dynamic user
+              I enjoy creating responsive, fast-loading, dynamic user
               experiences.
               <br />
               Previously worked with circus troupe as an acrobat and juggler.
