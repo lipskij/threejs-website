@@ -81,6 +81,8 @@ const Work: NextPage = () => {
         @media screen and (max-width: 480px) {
           .gallery {
             grid-template-columns: repeat(1, 1fr);
+            align-items: center;
+            justify-content: center;
             text-align: center;
             gap: 5rem;
             margin-bottom: 5rem;
@@ -113,15 +115,15 @@ const Work: NextPage = () => {
           <div key={i.href} className='gallery'>
             <motion.a
               key={i.href}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 0px 10px gradient(#5bf1f6 to #dbf2fe)",
-                transition: {
-                  duration: 0.3,
-                  ease: "easeInOut",
-                },
+              className='link'
+              whileHover={{ scale: 1.03 }}
+              style={{
+                color: "#dbf2fe",
+                textDecoration: "none",
+                width: "90%",
+                height: "95%",
+                margin: "0 auto",
               }}
-              style={{ color: "#dbf2fe", textDecoration: "none" }}
               rel='noopener noreferrer'
               aria-label='skidoc'
               href={i.href}
