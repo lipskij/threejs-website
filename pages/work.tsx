@@ -120,7 +120,6 @@ const Work: NextPage = () => {
               style={{
                 color: "#dbf2fe",
                 textDecoration: "none",
-                width: "90%",
                 height: "95%",
                 margin: "0 auto",
               }}
