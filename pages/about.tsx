@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import React from "react";
-import Nav from "../components/Nav";
 
 const About: NextPage = () => {
   return (

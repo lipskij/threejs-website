@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { NextPage } from "next/types";
 import React, { useEffect, useState } from "react";
-import Nav from "../components/Nav";
-import styles from "../styles/Home.module.css";
 
 const Contacts: NextPage = () => {
   const [text, setText] = useState("");

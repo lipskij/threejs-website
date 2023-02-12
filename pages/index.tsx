@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import Nav from "../components/Nav";
 import { motion } from "framer-motion";
 import Button from "../components/ContactButton";
 

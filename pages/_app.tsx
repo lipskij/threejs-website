@@ -32,7 +32,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           variants={{
             pageInitial: {
               opacity: 0,
-              height: "100vh",
               transition: {
                 duration: 0.3,
                 ease: "easeInOut",
@@ -40,14 +39,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             },
             pageAnimate: {
               opacity: 1,
-              transform: "translateY(0)",
               transition: {
                 duration: 0.3,
               },
             },
             pageExit: {
               opacity: 0,
-              transform: "translateY(-100px)",
+              transform: "translateY(-100%)",
               transition: {
                 duration: 0.3,
               },
@@ -55,10 +53,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           }}
         >
           <Component {...pageProps} canonical={url} key={url} />
-          <footer className={styles.footer}>
-            <p>Made by Emil Lipskij 2022</p>
-          </footer>
         </motion.div>
+        <footer className={styles.footer}>
+          <p>Made by Emil Lipskij 2022</p>
+        </footer>
       </AnimatePresence>
     </div>
   );
