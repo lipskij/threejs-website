@@ -75,7 +75,7 @@ const Work: NextPage = () => {
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          height: 50vh;
+          height: 30vh;
           margin-bottom: 7rem;
         }
         @media screen and (max-width: 480px) {

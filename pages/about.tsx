@@ -50,7 +50,7 @@ const About: NextPage = () => {
         <div>
           <h2>ABOUT</h2>
           <div>
-            <p>
+            <p className='text'>
               I&apos;m a self tought Developer from Vilnius Lithuania.
               <br />
               Finished Front End Masters online courses.
