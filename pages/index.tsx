@@ -1,42 +1,24 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
-import Loader from "../components/Loader";
 import { motion } from "framer-motion";
-import Button from "../components/Button";
+import Button from "../components/ContactButton";
 
 const Home: NextPage = () => {
-  const text = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: [0, 1, 1, 1],
-    },
-  };
   return (
     <div>
       <main className={styles.main}>
         <Nav />
-        <Loader />
         <section className={styles.home}>
-          <motion.div
-            variants={text}
-            initial='hidden'
-            animate='visible'
-            transition={{
-              default: { duration: 1.5, ease: "easeInOut", delay: 1.2 },
-            }}
-            className={styles.homeText}
-          >
+          <div className={styles.homeText}>
             <h1 className={styles.homeText1}>Hi, I&apos;m Emil.</h1>
             <h2 className={styles.homeText1}>
               I&apos;m a front-end web developer.
             </h2>
             <p>I create websites and web applications</p>
             <Button />
-          </motion.div>
-          
+          </div>
+
           <div className={styles.hexagons1}>
             <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
               <g>

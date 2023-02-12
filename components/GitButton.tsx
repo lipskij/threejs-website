@@ -70,15 +70,13 @@ export default function GitButton() {
           variants={{ hover: { scale: 0.85 }, press: { scale: 1.1 } }}
           className='label'
         >
-          <Link href='https://github.com/lipskij'>
-            <a
-              rel='noopener noreferrer'
-              aria-label='github-link'
-              href='https://github.com/lipskij'
-              target='_blank'
-            >
-              GitHub
-            </a>
+          <Link
+            rel='noopener noreferrer'
+            aria-label='github-link'
+            href='https://github.com/lipskij'
+            target='_blank'
+          >
+            GitHub
           </Link>
         </motion.div>
       </motion.button>
