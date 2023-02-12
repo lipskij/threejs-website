@@ -45,14 +45,13 @@ const Work: NextPage = () => {
         .work h2 {
           font-size: 3rem;
           text-align: center;
-          margin: 4rem 0 3rem 0;
+          margin: 5rem 0 3rem 0;
         }
 
         .gallery {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
-
+          gap: 2rem;
           width: 100%;
           height: 100%;
           margin-bottom: 10rem;
@@ -88,18 +87,14 @@ const Work: NextPage = () => {
             margin-bottom: 5rem;
             height: 100%;
           }
-
           .lines {
             display: flex;
-            justify-content: center;
-            align-items: center;
             width: 100%;
             height: 3px;
             background-color: #dbf2fe;
           }
         }
       `}</style>
-      <Nav />
       <section className='work'>
         <h2>WORK</h2>
         <div className='hexagon'>
@@ -133,6 +128,7 @@ const Work: NextPage = () => {
                 alt='project-images'
                 width={450}
                 height={250}
+                layout='responsive'
               />
             </motion.a>
             <p>{i.text}</p>
@@ -140,7 +136,7 @@ const Work: NextPage = () => {
           </div>
         ))}
         <div className='github'>
-          <h2>More on</h2>
+          <h2>You can find more projects on</h2>
           <GitButton />
         </div>
       </section>

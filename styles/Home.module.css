@@ -15,33 +15,10 @@
 
 .homeText {
   margin: 6rem 0;
-  z-index: 2;
 }
-.homeText1,
-.homeText2 {
+
+.homeText1 {
   font-size: 3rem;
-}
-
-.homeBtn {
-  background-color: #dbfdfe;
-  border: none;
-  margin-top: 1.5rem;
-  color: #141b1e;
-  font-size: 1.3rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.homeBtn:hover {
-  background-color: #81f5af;
-}
-
-.homeBtn a {
-  text-decoration: none;
-  color: #141b1e;
-  cursor: pointer;
 }
 
 .hexagons1 {
@@ -62,37 +39,17 @@
   transform: scale(1.4);
 }
 
-.loader {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background-color: #141b1e;
-}
-
 .footer p {
   display: flex;
   padding: 0.5rem 0 0.5rem 0;
   justify-content: center;
   color: #dbf2fe;
   margin: 0 auto;
-  animation: footer 2s ease-in-out;
 }
 
 .letter {
   animation: letter 2s ease-in-out;
   animation-delay: 1s;
-}
-
-@keyframes footer {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes letter {

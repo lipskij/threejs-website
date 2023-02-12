@@ -45,7 +45,6 @@ const About: NextPage = () => {
           }
         }
       `}</style>
-      <Nav />
       <section className='about'>
         <div>
           <h2>ABOUT</h2>

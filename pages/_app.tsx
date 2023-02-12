@@ -4,6 +4,7 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
+import Nav from "../components/Nav";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         />
         <link rel='icon' href='/favicon2.ico' />
       </Head>
+      <Nav />
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => window.scrollTo(0, 0)}

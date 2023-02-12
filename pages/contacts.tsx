@@ -150,7 +150,6 @@ const Contacts: NextPage = () => {
           }
         }
       `}</style>
-      <Nav />
 
       <section className='contacts'>
         <div className='hexagon'>

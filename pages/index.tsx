@@ -8,7 +8,6 @@ const Home: NextPage = () => {
   return (
     <div>
       <main className={styles.main}>
-        <Nav />
         <section className={styles.home}>
           <div className={styles.homeText}>
             <h1 className={styles.homeText1}>Hi, I&apos;m Emil.</h1>
