@@ -2,10 +2,22 @@ import { motion } from "framer-motion-3d";
 import { MotionConfig } from "framer-motion";
 import { useRef, useLayoutEffect } from "react";
 import { transition } from "../utils/settings";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas, ShapeProps, useThree } from "@react-three/fiber";
 import { useSmoothTransform } from "../utils/use-smooth-transform";
 
-export function Shapes({ isHover, isPress, mouseX, mouseY }) {
+const ShapeProps = {
+  isHover: false,
+  isPress: false,
+  mouseX: 0,
+  mouseY: 0,
+};
+
+export const Shapes: React.FC<ShapeProps> = ({
+  isHover,
+  isPress,
+  mouseX,
+  mouseY,
+}) => {
   const lightRotateX = useSmoothTransform(mouseY, spring, mouseToLightRotation);
   const lightRotateY = useSmoothTransform(mouseX, spring, mouseToLightRotation);
 
@@ -34,7 +46,7 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
       </MotionConfig>
     </Canvas>
   );
-}
+};
 
 export function Lights() {
   return (
@@ -111,23 +123,31 @@ export function Icosahedron3() {
   );
 }
 
-export function Material() {
+export const Material: React.FC = () => {
   return <meshPhongMaterial color='#fff' specular='#61dafb' shininess={10} />;
-}
+};
 
 // Adapted from https://github.com/pmndrs/drei/blob/master/src/core/PerspectiveCamera.tsx
-function Camera({ mouseX, mouseY, ...props }) {
-  const cameraX = useSmoothTransform(mouseX, spring, (x) => x / 350);
-  const cameraY = useSmoothTransform(mouseY, spring, (y) => (-1 * y) / 350);
+const Camera: React.FC<{ mouseX: number; mouseY: number }> = ({
+  mouseX,
+  mouseY,
+  ...props
+}) => {
+  const cameraX = useSmoothTransform(mouseX, spring, (x: number) => x / 350);
+  const cameraY = useSmoothTransform(
+    mouseY,
+    spring,
+    (y: number) => (-1 * y) / 350
+  );
 
   const set = useThree(({ set }) => set);
   const camera = useThree(({ camera }) => camera);
   const size = useThree(({ size }) => size);
   const scene = useThree(({ scene }) => scene);
-  const cameraRef = useRef();
+  const cameraRef = useRef(null);
 
   useLayoutEffect(() => {
-    const { current: cam } = cameraRef;
+    const { current: cam } = cameraRef as any;
     if (cam) {
       cam.aspect = size.width / size.height;
       cam.updateProjectionMatrix();
@@ -153,8 +173,8 @@ function Camera({ mouseX, mouseY, ...props }) {
       position={[cameraX, cameraY, 3.8]}
     />
   );
-}
+};
 
 const spring = { stiffness: 600, damping: 30 };
 
-const mouseToLightRotation = (v) => (-1 * v) / 140;
+const mouseToLightRotation = (v: number) => (-1 * v) / 140;
