@@ -40,17 +40,22 @@ const Contacts: NextPage = () => {
         }
         .cantactList {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           margin: 0 auto;
-          width: 50%;
           margin-bottom: 3rem;
+        }
+        .cantactList div {
+          transition-duration: 0.3s;
+        }
+        .cantactList div:hover {
+          transform: scale(1.1);
+          transition-duration: 0.3s;
         }
         .contacts h2 {
           font-size: 3rem;
           color: #dbf2fe;
           margin: 3rem 0 2rem 0;
         }
-
         .container input[type="text"],
         .container select,
         .container textarea {
@@ -167,66 +172,40 @@ const Contacts: NextPage = () => {
       <section className='contacts'>
         <h2>CONTACTS</h2>
         <div className='cantactList'>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image
-              src='/images/linkedin.svg'
-              width={50}
-              height={50}
-              alt='linkedin'
-            />
+          <div>
             <Link
               style={linkStyles}
-              href='/https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
+              href='https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
+              rel='noopener noreferrer'
+              target='_blank'
             >
-              LinkedIn
+              <Image
+                src='/images/linkedin.svg'
+                width={50}
+                height={50}
+                alt='linkedin'
+              />
             </Link>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image src='/images/mail.svg' width={50} height={50} alt='mail' />
+          <div>
             <Link style={linkStyles} href='mailto:emil.lipskij@gmail.com'>
-              emil.lipskij@gmail.com
+              <Image src='/images/mail.svg' width={50} height={50} alt='mail' />
             </Link>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image src='/images/phone.svg' width={55} height={55} alt='phone' />
+          <div>
             <Link style={linkStyles} href='tel:+370 625 24 354'>
-              +370 625 24 354
+              <Image
+                src='/images/phone.svg'
+                width={55}
+                height={55}
+                alt='phone'
+              />
             </Link>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image
-              src='/images/github.svg'
-              width={50}
-              height={50}
-              alt='github'
-            />
+          <div>
             <Link
               style={linkStyles}
               rel='noopener noreferrer'
@@ -234,7 +213,12 @@ const Contacts: NextPage = () => {
               href='https://github.com/lipskij'
               target='_blank'
             >
-              Github
+              <Image
+                src='/images/github.svg'
+                width={50}
+                height={50}
+                alt='github'
+              />
             </Link>
           </div>
         </div>
