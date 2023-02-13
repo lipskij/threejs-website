@@ -40,16 +40,16 @@ const Nav = () => {
       />
       <ul className='desctop-nav'>
         <li>
-          <Link href='/'>HOME</Link>
+          <Link href='/'>Home</Link>
         </li>
         <li>
-          <Link href='/about'>ABOUT</Link>
+          <Link href='/about'>About</Link>
         </li>
         <li>
-          <Link href='/work'>WORK</Link>
+          <Link href='/work'>Work</Link>
         </li>
         <li>
-          <Link href='/contacts'>CONTACTS</Link>
+          <Link href='/contacts'>Contact</Link>
         </li>
       </ul>
       <Drawer className={hamburgerClassName} isOpen={isOpen}>

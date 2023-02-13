@@ -1,6 +1,15 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { NextPage } from "next/types";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
+
+const linkStyles = {
+  textDecoration: "none",
+  color: "#dbf2fe",
+  fontSize: "1.2rem",
+  margin: "1rem",
+};
 
 const Contacts: NextPage = () => {
   const [text, setText] = useState("");
@@ -29,11 +38,17 @@ const Contacts: NextPage = () => {
           margin: 0 auto;
           color: #dbf2fe;
         }
-
+        .cantactList {
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          width: 50%;
+          margin-bottom: 3rem;
+        }
         .contacts h2 {
           font-size: 3rem;
           color: #dbf2fe;
-          margin: 6rem 0 5rem 0;
+          margin: 3rem 0 2rem 0;
         }
 
         .container input[type="text"],
@@ -150,6 +165,79 @@ const Contacts: NextPage = () => {
       `}</style>
 
       <section className='contacts'>
+        <h2>CONTACTS</h2>
+        <div className='cantactList'>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src='/images/linkedin.svg'
+              width={50}
+              height={50}
+              alt='linkedin'
+            />
+            <Link
+              style={linkStyles}
+              href='/https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
+            >
+              LinkedIn
+            </Link>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image src='/images/mail.svg' width={50} height={50} alt='mail' />
+            <Link style={linkStyles} href='mailto:emil.lipskij@gmail.com'>
+              emil.lipskij@gmail.com
+            </Link>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image src='/images/phone.svg' width={55} height={55} alt='phone' />
+            <Link style={linkStyles} href='tel:+370 625 24 354'>
+              +370 625 24 354
+            </Link>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src='/images/github.svg'
+              width={50}
+              height={50}
+              alt='github'
+            />
+            <Link
+              style={linkStyles}
+              rel='noopener noreferrer'
+              aria-label='github-link'
+              href='https://github.com/lipskij'
+              target='_blank'
+            >
+              Github
+            </Link>
+          </div>
+        </div>
         <div className='hexagon'>
           <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
             <g>
@@ -159,7 +247,6 @@ const Contacts: NextPage = () => {
             </g>
           </svg>
         </div>
-        <h2>CONTACTS</h2>
         <div className='container'>
           <form
             name='contact'
