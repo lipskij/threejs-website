@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
-import GitButton from "../components/GitButton";
+import Link from "next/link";
 
 const projects = [
   {
@@ -76,6 +76,23 @@ const Work: NextPage = () => {
           height: 30vh;
           margin-bottom: 7rem;
         }
+        .gitBtn {
+          text-decoration: none;
+          padding: 1rem;
+          font-size: 1.5rem;
+          background: transparent;
+          border: 1px solid #dbf2fe;
+          border-radius: 5px;
+          color: #dbf2fe;
+          transition: all 0.3s ease-in-out;
+        }
+        .gitBtn:hover {
+          background: #dbf2fe;
+          color: #141b1e;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          scale: 1.05;
+        }
         @media screen and (max-width: 480px) {
           .gallery {
             grid-template-columns: repeat(1, 1fr);
@@ -135,8 +152,17 @@ const Work: NextPage = () => {
           </div>
         ))}
         <div className='github'>
-          <h2>You can find more projects on</h2>
-          <GitButton />
+          <h2>To find more projects visit</h2>
+          <Link
+            rel='noopener noreferrer'
+            aria-label='github-link'
+            href='https://github.com/lipskij'
+            target='_blank'
+          >
+            <button className='gitBtn' type='button'>
+              GitHub
+            </button>
+          </Link>
         </div>
       </section>
     </div>

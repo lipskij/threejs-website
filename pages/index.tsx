@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
-import Button from "../components/ContactButton";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +14,12 @@ const Home: NextPage = () => {
               I&apos;m a front-end web developer.
             </h2>
             <p>I create websites and web applications</p>
-            <Button />
+            <Link
+              style={{ textDecoration: "none" }}
+              href='/contacts'
+            >
+              <button type='button'>Contacts</button>
+            </Link>
           </div>
 
           <div className={styles.hexagons1}>
