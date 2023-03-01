@@ -1,8 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "../styles/Work.module.css";
 
 const projects = [
   {
@@ -24,144 +24,34 @@ const projects = [
 
 const Work: NextPage = () => {
   return (
-    <div className='main'>
-      <style jsx>{`
-        .main {
-          background-color: #141b1e;
-        }
-
-        .work {
-          display: flex;
-          flex-direction: column;
-          text-align: left;
-          width: 80%;
-          height: 100%;
-          margin: 0 auto;
-          color: #dbf2fe;
-          line-height: 2.2;
-        }
-
-        .work h2 {
-          font-size: 3rem;
-          text-align: center;
-          margin: 5rem 0 3rem 0;
-        }
-
-        .gallery {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          width: 100%;
-          height: 100%;
-          margin-bottom: 10rem;
-        }
-
-        .gallery p {
-          font-size: 1.5rem;
-        }
-
-        .hexagon {
-          position: absolute;
-          width: 150px;
-          height: 150px;
-          top: 65%;
-          right: 120px;
-          opacity: 30%;
-        }
-        .github {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          height: 30vh;
-          margin-bottom: 7rem;
-        }
-        .gitBtn {
-          text-decoration: none;
-          padding: 1rem;
-          font-size: 1.5rem;
-          background: transparent;
-          border: 1px solid #dbf2fe;
-          border-radius: 5px;
-          color: #dbf2fe;
-          transition: all 0.3s ease-in-out;
-        }
-        .gitBtn:hover {
-          background: #dbf2fe;
-          color: #141b1e;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-          scale: 1.05;
-        }
-        @media screen and (max-width: 480px) {
-          .gallery {
-            grid-template-columns: repeat(1, 1fr);
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 5rem;
-            margin-bottom: 5rem;
-            height: 100%;
-          }
-          .lines {
-            display: flex;
-            width: 100%;
-            height: 3px;
-            background-color: #dbf2fe;
-          }
-        }
-      `}</style>
-      <section className='work'>
-        <h2>WORK</h2>
-        <div className='hexagon'>
-          <svg x='0px' y='0px' viewBox='0 0 790 790' fill='#5bf1f6'>
-            <g>
-              <polygon points='0,186.26 107.264,247.871 214.529,186.26 214.529,63.04 107.264,1.429 0,63.04 	' />
-              <polygon points='275.471,63.04 275.471,186.26 382.735,247.871 490,186.26 490,63.04 382.735,1.429 	' />
-              <polygon points='137.954,303.74 137.954,426.96 245.219,488.571 352.484,426.96 352.484,303.74 245.219,242.13 	' />
-            </g>
-          </svg>
-        </div>
+    <div className={styles.main}>
+      <h2>WORK</h2>
+      <section className={styles.work}>
         {projects.map((i) => (
-          <div key={i.href} className='gallery'>
-            <motion.a
-              key={i.href}
-              className='link'
-              whileHover={{ scale: 1.03 }}
-              style={{
-                color: "#dbf2fe",
-                textDecoration: "none",
-                height: "95%",
-                margin: "0 auto",
-              }}
-              rel='noopener noreferrer'
-              aria-label='skidoc'
-              href={i.href}
-              target='_blank'
-            >
+          <div key={i.href} className={styles.gallery}>
+            <Link href={i.href}>
               <Image
                 src={i.src}
                 alt='project-images'
                 width={450}
                 height={250}
-                layout='responsive'
               />
-            </motion.a>
+            </Link>
+
             <p>{i.text}</p>
-            <div className='lines'></div>
+            <div className={styles.lines}></div>
           </div>
         ))}
-        <div className='github'>
+        <div className={styles.github}>
           <h2>To find more projects visit</h2>
           <Link
             rel='noopener noreferrer'
             aria-label='github-link'
             href='https://github.com/lipskij'
             target='_blank'
+            className={styles.gitBtn}
           >
-            <button className='gitBtn' type='button'>
-              GitHub
-            </button>
+            GitHub
           </Link>
         </div>
       </section>

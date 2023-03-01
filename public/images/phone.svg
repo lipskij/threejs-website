@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="0.990028in" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" viewBox="0 0 152 145" width="1.03763in" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css">
    <![CDATA[
-    .fil1 {fill:#dbf2fe}
-    .fil0 {fill:#201E1E}
+    .fil1 {fill:#ECF0F1}
+    .fil0 {fill:#310056}
    ]]>
   </style></defs><g id="Layer_x0020_1"><g id="_361541528"><ellipse class="fil0" cx="76" cy="123" rx="76" ry="23"/><path class="fil0" d="M34 92c-1,-1 -2,-2 -3,-3 -8,-10 -12,-21 -11,-34 3,-20 18,-38 36,-47 25,-13 53,-11 72,11 20,23 16,57 -2,80 -15,20 -44,31 -65,15 -7,4 -15,7 -22,10 -9,3 -16,-6 -12,-13 0,-1 1,-2 1,-2 0,-2 0,-5 1,-7 1,-1 2,-2 3,-3 0,-2 1,-5 2,-7 0,0 0,0 0,0z"/><path class="fil1" d="M123 24c-40,-47 -123,15 -86,60 1,1 1,2 2,3 1,2 2,3 4,5 -2,3 -4,6 -5,10 -1,1 -2,3 -2,4 -1,1 -1,2 0,3 -1,2 -2,3 -3,5 0,2 1,4 3,3 9,-3 17,-7 26,-12 18,17 45,8 59,-10 16,-21 19,-50 2,-71zm-29 65c-9,-2 -18,-9 -24,-16 -6,-8 -11,-18 -12,-28 0,-9 5,-14 12,-18 3,2 6,5 8,8 2,3 3,7 4,10 -3,1 -7,3 -8,6 -1,4 1,8 4,11 3,3 7,5 11,6 2,0 4,-1 6,-2 0,0 1,-1 1,-1 0,0 1,0 1,0 1,-1 1,-1 1,-1 7,2 12,5 16,11 -4,8 -9,15 -20,14z"/></g></g></svg>

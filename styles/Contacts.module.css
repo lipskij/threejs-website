@@ -1,0 +1,133 @@
+.main h2 {
+  font-size: 4rem;
+  font-weight: 200;
+  color: var(--text-color);
+  margin: 3rem 0 3rem 0;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  margin: 0 auto;
+  color: #dbf2fe;
+}
+.cantactList {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.cantactList div {
+  transition-duration: 0.3s;
+}
+.cantactList div:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+.contacts h2 {
+  font-size: 3rem;
+  color: #dbf2fe;
+  margin: 3rem 0 2rem 0;
+}
+.container input[type="text"],
+.container select,
+.container textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #253237;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.name,
+.email {
+  width: 90%;
+  padding: 0.5rem;
+  border: 1px solid #253237;
+  border-radius: 4px;
+}
+
+.name:focus,
+.email:focus,
+.message:focus {
+  border: 1px solid #81f5af;
+  outline: none;
+}
+
+.name {
+  margin-bottom: 6px;
+}
+
+/* Style the submit button with a specific background color etc */
+.container button[type="submit"] {
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.container button:disabled {
+  background-color: #bebebe;
+  color: #0c0c0c;
+  cursor: not-allowed;
+}
+
+.container button:hover {
+  scale: 1.05;
+  transition-duration: 0.3s;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+.container input[type="submit"]:focus {
+  background-color: #81f5af;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  padding: 20px;
+  width: 60vw;
+  margin: 0 auto;
+}
+.container:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(172, 188, 202, 0.5);
+  filter: blur(5px);
+  margin: -20px;
+}
+
+@media screen and (max-width: 480px) {
+  .contacts {
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 5rem;
+  }
+  .container {
+    width: 80vw;
+  }
+}

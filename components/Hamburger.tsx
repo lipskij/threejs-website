@@ -31,7 +31,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
           z-index: 3;
         }
         .bar {
-          background-color: #dbf2fe;
+          background-color: #310056;
           min-height: 4px;
           min-width: 20px;
           transition: transform 300ms;

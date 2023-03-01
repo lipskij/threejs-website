@@ -15,7 +15,7 @@ const Drawer: React.FC<DrawerProps> = ({
     <div className={`root ${className} ${isOpen ? "isOpen" : ""}`}>
       <style jsx>{`
         .root {
-          background-color: #141b1e;
+          background-color: #ecf0f1;
           position: absolute;
           width: 100vw;
           height: 100vh;
@@ -32,7 +32,7 @@ const Drawer: React.FC<DrawerProps> = ({
         }
         @media (max-width: 480px) {
           .root {
-            font-weight: 900;
+            font-weight: 200;
             font-size: 3rem;
             display: flex;
             flex-direction: column;
@@ -44,11 +44,9 @@ const Drawer: React.FC<DrawerProps> = ({
           .isOpen ul {
             width: 100%;
             display: flex;
-            height: 80%;
             align-items: center;
-            background-color: #141b1e;
-            line-height: 3;
-            justify-content: center;
+            background-color: #ecf0f1;
+            justify-content: spece-evenly;
           }
         }
         ${isOpen ? `:global(body) { overflow: hidden; } ` : ``}

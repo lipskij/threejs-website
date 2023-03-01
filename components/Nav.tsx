@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Drawer from "./Drower";
 import Hamburger from "./Hamburger";
 import css from "styled-jsx/css";
@@ -43,7 +43,7 @@ const Nav = () => {
           <Link href='/'>Home</Link>
         </li>
         <li>
-          <Link href='/about'>About</Link>
+          <Link href='/#about'>About</Link>
         </li>
         <li>
           <Link href='/work'>Work</Link>
@@ -58,7 +58,7 @@ const Nav = () => {
             <Link href='/'>HOME</Link>
           </li>
           <li>
-            <Link href='/about'>ABOUT</Link>
+            <Link href='/#about'>ABOUT</Link>
           </li>
           <li>
             <Link href='/work  '>WORK</Link>
