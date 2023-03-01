@@ -3,7 +3,6 @@ import "../styles/globals.css";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
-// import styles from "../styles/Home.module.css";
 import Nav from "../components/Nav";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
