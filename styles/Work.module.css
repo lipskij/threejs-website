@@ -28,6 +28,11 @@
   margin: 5rem 0 3rem 0;
 }
 
+.work p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -77,6 +82,12 @@
   scale: 1.05;
 }
 @media screen and (max-width: 480px) {
+  .main h2{
+    font-size: 2rem;
+  }
+  .work {
+    width: 100%;
+  }
   .gallery {
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
@@ -86,6 +97,7 @@
     margin-bottom: 5rem;
     height: 100%;
   }
+  
   .lines {
     display: flex;
     width: 100%;

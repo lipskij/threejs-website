@@ -33,8 +33,9 @@ const Work: NextPage = () => {
               <Image
                 src={i.src}
                 alt='project-images'
-                width={450}
-                height={250}
+                width={400}
+                height={200}
+                unoptimized={false}
               />
             </Link>
 
