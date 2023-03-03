@@ -3,8 +3,18 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import BackToTop from "../components/BackToTop";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  const hash = typeof window !== "undefined" ? window.location.hash : "";
+
+  useEffect(() => {
+    if (hash === "#about") {
+      const about = document.getElementById("about");
+      about?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [hash]);
+
   return (
     <div>
       <main className={styles.main}>

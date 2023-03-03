@@ -88,6 +88,11 @@
   .work {
     width: 100%;
   }
+
+  .work p {
+    width: 90%;
+    margin: 0 auto;
+  }
   .gallery {
     grid-template-columns: repeat(1, 1fr);
     align-items: center;
