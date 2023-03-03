@@ -45,81 +45,12 @@ const Success: NextPage = () => {
     >
       <Confetti width={width} height={height} />
       <div className='main'>
-        <style jsx>{`
-          .main {
-            background-color: #141b1e;
-            display: flex;
-            justify-content: center;
-          }
-          .main h2,
-          .main p {
-            font-size: 3rem;
-            color: #dbf2fe;
-            margin: 6rem 0 5rem 0;
-            text-align: center;
-          }
-
-          @media (max-width: 480px) {
-            .main {
-              height: 100vh;
-            }
-            .button {
-              display: flex;
-              justify-content: center;
-            }
-          }
-        `}</style>
-        <div className='contacts'>
-          <h2>Thank you for your message!</h2>
-          <p>I will get back to you as soon as possible.</p>
+        <div className='success'>
+          <h1>Thank you for your message!</h1>
+          <h2>I will get back to you as soon as possible.</h2>
           <div className='button'>
             <Link href='/'>
-              <a>
-                <motion.button
-                  style={
-                    width > 480
-                      ? {
-                          position: "absolute",
-                          left: "40%",
-                          top: "50%",
-                          transform: "translateY(-50%)",
-                          cursor: "pointer",
-                          alignSelf: "center",
-                          padding: "1rem",
-                          backgroundColor: "#dbf2fe",
-                          color: "#141b1e",
-                          border: "none",
-                          borderRadius: "10px",
-                          fontSize: "1.3rem",
-                        }
-                      : {
-                          position: "relative",
-                          cursor: "pointer",
-                          margin: "0 auto",
-                          padding: "1rem",
-                          backgroundColor: "#dbf2fe",
-                          color: "#141b1e",
-                          border: "none",
-                          borderRadius: "10px",
-                          fontSize: "1.3rem",
-                        }
-                  }
-                  animate={{
-                    x: [0, 10, 0],
-                    rotate: [0, 10, 0, 10, 0],
-                    transition: {
-                      duration: 0.5,
-                      ease: "easeInOut",
-                      loop: Infinity,
-                      repeatDelay: 0.5,
-                      repeatType: "reverse",
-                      yoyo: Infinity,
-                    },
-                  }}
-                >
-                  Go back to the homepage
-                </motion.button>
-              </a>
+              <button type='button'>Go back to the homepage</button>
             </Link>
           </div>
         </div>

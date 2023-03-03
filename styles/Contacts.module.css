@@ -37,7 +37,7 @@
 .container textarea {
   width: 90%;
   padding: 12px;
-  border: 1px solid #253237;
+  border: 1px solid var(--secondary-color);
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 6px;
@@ -49,14 +49,14 @@
 .email {
   width: 90%;
   padding: 0.5rem;
-  border: 1px solid #253237;
+  border: 1px solid var(--secondary-color);
   border-radius: 4px;
 }
 
 .name:focus,
 .email:focus,
 .message:focus {
-  border: 1px solid #81f5af;
+  border: 1px solid var(--text-color);
   outline: none;
 }
 
@@ -71,7 +71,7 @@
   width: 150px;
   height: 50px;
   background-color: var(--secondary-color);
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 15px #c77eff;
   cursor: pointer;
   transition: 0.2s;
   text-decoration: none;
@@ -83,6 +83,7 @@
   background-color: #bebebe;
   color: #0c0c0c;
   cursor: not-allowed;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .container button:hover {
@@ -92,42 +93,28 @@
 
 /* When moving the mouse over the submit button, add a darker green color */
 .container input[type="submit"]:focus {
-  background-color: #81f5af;
+  background-color: var(--text-color);
 }
 
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 1;
-  background: inherit;
-  overflow: hidden;
   padding: 20px;
-  width: 60vw;
+  width: 500px;
   margin: 0 auto;
-}
-.container:before {
-  content: "";
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(172, 188, 202, 0.5);
-  filter: blur(5px);
-  margin: -20px;
 }
 
 @media screen and (max-width: 480px) {
+  .main {
+    padding-top: 10rem;
+  }
   .contacts {
     width: 100%;
     height: 100vh;
     padding-bottom: 5rem;
   }
   .container {
-    width: 80vw;
+    width: 90vw;
   }
 }

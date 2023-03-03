@@ -84,6 +84,7 @@
 @media screen and (max-width: 480px) {
   .main h2{
     font-size: 2rem;
+    margin-top: 10rem;
   }
   .work {
     width: 100%;
