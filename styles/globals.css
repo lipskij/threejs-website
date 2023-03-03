@@ -6,7 +6,7 @@
 }
 
 :root {
-  --primary-color: #ECF0F1;
+  --primary-color: #ecf0f1;
   --secondary-color: #abbbc7;
   --text-color: #310056;
   --text-color-10: #aa3bff;
@@ -110,6 +110,7 @@ footer {
 
   nav {
     position: fixed;
+    background-color: var(--primary-color);
   }
 
   nav ul {

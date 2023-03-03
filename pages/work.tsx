@@ -22,6 +22,8 @@ const projects = [
   },
 ];
 
+// add work from past job
+
 const Work: NextPage = () => {
   return (
     <div className={styles.main}>
