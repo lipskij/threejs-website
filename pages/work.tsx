@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Work.module.css";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -25,21 +26,37 @@ const projects = [
 // add work from past job
 
 const Work: NextPage = () => {
+  const [loaded, setLoaded] = React.useState(false);
+
   return (
     <div className={styles.main}>
       <h2>WORK</h2>
       <section className={styles.work}>
         {projects.map((i) => (
           <div key={i.href} className={styles.gallery}>
-            <Link href={i.href}>
-              <Image
-                src={i.src}
-                alt='project-images'
-                width={400}
-                height={200}
-                unoptimized={false}
-              />
-            </Link>
+            {!loaded ? "Loading..." : null}
+            <motion.div
+              animate={
+                loaded
+                  ? {
+                      x: [-50, 0],
+                      transition: { duration: 0.5 },
+                      opacity: [0, 1],
+                    }
+                  : {}
+              }
+            >
+              <Link href={i.href}>
+                <Image
+                  src={i.src}
+                  alt='project-images'
+                  width={400}
+                  height={200}
+                  quality={100}
+                  onLoadingComplete={() => setLoaded(true)}
+                />
+              </Link>
+            </motion.div>
 
             <p>{i.text}</p>
             <div className={styles.lines}></div>
