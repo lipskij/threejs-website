@@ -7,12 +7,12 @@ import styles from "../styles/Work.module.css";
 const projects = [
   {
     href: "https://skidoc.fr/",
-    src: "/images/ski.webp",
+    src: "/images/skidoc.webp",
     text: "Creating internal stock management system using NoSQL, MeteorJs and React. Using AWS and working with CI/CD.",
   },
   {
     href: "https://easyproduction.org",
-    src: "/images/easy.webp",
+    src: "/images/easy2.webp",
     text: "Film maker and producer personal website to showcase work and projects. For this website I used Nextjs,Framer motion for animations and page transitions.",
   },
   {
