@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import BackToTop from "../components/BackToTop";
 import { useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   const hash = typeof window !== "undefined" ? window.location.hash : "";
@@ -14,6 +16,14 @@ const Home: NextPage = () => {
       about?.scrollIntoView({ behavior: "smooth" });
     }
   }, [hash]);
+  // React.useEffect(() => {
+  //   // show cursor possition
+  //   document.addEventListener("mousemove", (e) => {
+  //     const x = e.clientX;
+  //     const y = e.clientY;
+  //     console.log("mouse move", x, y);
+  //   });
+  // }, []);
 
   return (
     <div>
@@ -28,27 +38,29 @@ const Home: NextPage = () => {
               Contacts
             </Link>
           </div>
-
-          <div className={styles.image}>
-            <Image
-              src='/images/image.svg'
-              alt='hero'
-              width={400}
-              height={400}
-            />
-            <div className={styles.line} />
-          </div>
-          <div>
-            <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
-              <line
-                x1='50'
-                y1='80'
-                x2='50'
-                y2='1'
-                stroke='#abbbc7'
-                strokeWidth={0.5}
+          <div
+            style={{
+              position: "absolute",
+              top: "30%",
+              left: "60%",
+            }}
+          >
+            {Array.from(Array(50).keys()).map((i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0, 1],
+                  transition: { duration: 1 },
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.2 },
+                  boxShadow: "0px 0px 20px #aa3bff",
+                }}
+                className={styles.line}
               />
-            </svg>
+            ))}
           </div>
         </section>
 

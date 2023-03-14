@@ -49,6 +49,7 @@
   width: 150px;
   height: 50px;
   background-color: var(--secondary-color);
+  border-radius: 10px;
   box-shadow: 0 0 10px grey;
   cursor: pointer;
   transition: 0.2s;
@@ -59,6 +60,8 @@
 .button:hover {
   scale: 1.05;
   transition: 0.2s;
+  background-color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .image {
@@ -69,7 +72,8 @@
 .line {
   width: 400px;
   height: 3px;
-  background-color: #000;
+  background-color: var(--text-color);
+  margin: 5px;
   box-shadow: 0 0 10px grey;
 }
 
