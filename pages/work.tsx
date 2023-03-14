@@ -34,7 +34,6 @@ const Work: NextPage = () => {
       <section className={styles.work}>
         {projects.map((i) => (
           <div key={i.href} className={styles.gallery}>
-            {!loaded ? "Loading..." : null}
             <motion.div
               animate={
                 loaded
@@ -46,16 +45,20 @@ const Work: NextPage = () => {
                   : {}
               }
             >
-              <Link href={i.href}>
-                <Image
-                  src={i.src}
-                  alt='project-images'
-                  width={400}
-                  height={200}
-                  quality={100}
-                  onLoadingComplete={() => setLoaded(true)}
-                />
-              </Link>
+              {!loaded ? (
+                "Loading..."
+              ) : (
+                <Link href={i.href}>
+                  <Image
+                    src={i.src}
+                    alt='project-images'
+                    width={400}
+                    height={200}
+                    quality={100}
+                    onLoadingComplete={() => setLoaded(true)}
+                  />
+                </Link>
+              )}
             </motion.div>
 
             <p>{i.text}</p>
