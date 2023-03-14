@@ -16,14 +16,6 @@ const Home: NextPage = () => {
       about?.scrollIntoView({ behavior: "smooth" });
     }
   }, [hash]);
-  // React.useEffect(() => {
-  //   // show cursor possition
-  //   document.addEventListener("mousemove", (e) => {
-  //     const x = e.clientX;
-  //     const y = e.clientY;
-  //     console.log("mouse move", x, y);
-  //   });
-  // }, []);
 
   return (
     <div>
@@ -38,13 +30,7 @@ const Home: NextPage = () => {
               Contacts
             </Link>
           </div>
-          <div
-            style={{
-              position: "absolute",
-              top: "30%",
-              left: "60%",
-            }}
-          >
+          <div className={styles.lineDiv}>
             {Array.from(Array(50).keys()).map((i) => (
               <motion.div
                 key={i}

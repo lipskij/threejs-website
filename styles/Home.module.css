@@ -77,6 +77,12 @@
   box-shadow: 0 0 10px grey;
 }
 
+.lineDiv {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -156,7 +162,7 @@
     margin: 20px auto;
   }
 
-  .image {
+  .lineDiv {
     display: none;
   }
 
