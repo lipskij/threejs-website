@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Drawer from "./Drower";
 import Hamburger from "./Hamburger";
 import css from "styled-jsx/css";
+import { useRouter } from "next/router";
 
 const { className: hamburgerClassName, styles: hamburgerStyles } = css.resolve`
   @media screen and (min-width: 480px) {
@@ -12,8 +13,18 @@ const { className: hamburgerClassName, styles: hamburgerStyles } = css.resolve`
   }
 `;
 
-const Nav = () => {
+const Nav: React.FC = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      setActive("active");
+    } else {
+      setActive("");
+    }
+  }, [router.pathname]);
 
   return (
     <nav>
@@ -40,16 +51,33 @@ const Nav = () => {
       />
       <ul className='desctop-nav'>
         <li>
-          <Link href='/'>Home</Link>
+          <Link className={router.pathname == "/" ? "active" : ""} href='/'>
+            Home
+          </Link>
         </li>
         <li>
-          <Link href='/#about'>About</Link>
+          <Link
+            className={router.pathname == "/#about" ? "active" : ""}
+            href='/#about'
+          >
+            About
+          </Link>
         </li>
         <li>
-          <Link href='/work'>Work</Link>
+          <Link
+            className={router.pathname == "/work" ? "active" : ""}
+            href='/work'
+          >
+            Work
+          </Link>
         </li>
         <li>
-          <Link href='/contacts'>Contact</Link>
+          <Link
+            className={router.pathname == "/contacts" ? "active" : ""}
+            href='/contacts'
+          >
+            Contact
+          </Link>
         </li>
       </ul>
       <Drawer className={hamburgerClassName} isOpen={isOpen}>
@@ -64,7 +92,8 @@ const Nav = () => {
             <Link href='/work  '>WORK</Link>
           </li>
           <li>
-            <Link href='/contacts'>CONTACTS</Link>
+            <Link 
+             href='/contacts'>CONTACTS</Link>
           </li>
         </ul>
       </Drawer>

@@ -52,7 +52,12 @@ nav li a {
 }
 
 nav li a:hover {
-  color: #aa3bff;
+  color: #c77eff;
+  transition: 0.2s;
+}
+
+.active {
+  color: #c77eff;
   transition: 0.2s;
 }
 
