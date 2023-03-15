@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Work.module.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
@@ -34,29 +34,35 @@ const Work: NextPage = () => {
       <section className={styles.work}>
         {projects.map((i) => (
           <div key={i.href} className={styles.gallery}>
-            <motion.div
-              animate={
-                loaded
-                  ? {
-                      x: [-50, 0],
-                      transition: { duration: 0.5 },
-                      opacity: [0, 1],
-                    }
-                  : {}
-              }
-            >
-              {!loaded && <p>Loading...</p>}
-              <Link href={i.href}>
-                <Image
-                  src={i.src}
-                  alt='project-images'
-                  width={400}
-                  height={200}
-                  quality={100}
-                  onLoadingComplete={() => setLoaded(true)}
-                />
-              </Link>
-            </motion.div>
+            <AnimatePresence>
+              <motion.div
+                key='image'
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+                // animate={
+                //   loaded
+                //     ? {
+                //         x: [-50, 0],
+                //         transition: { duration: 0.5 },
+                //         opacity: [0, 1],
+                //       }
+                //     : {}
+                // }
+              >
+                {!loaded && <p>Loading...</p>}
+                <Link href={i.href}>
+                  <Image
+                    src={i.src}
+                    alt='project-images'
+                    width={400}
+                    height={200}
+                    quality={100}
+                    onLoadingComplete={() => setLoaded(true)}
+                  />
+                </Link>
+              </motion.div>
+            </AnimatePresence>
 
             <p>{i.text}</p>
             <div className={styles.lines}></div>
