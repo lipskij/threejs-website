@@ -57,7 +57,17 @@ const Contacts: NextPage = () => {
             }}
           >
             <div className={styles.cantactList}>
-              <motion.div>
+              <motion.div
+                animate={{
+                  opacity: [0, 1],
+                  x: [-800, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeIn",
+                    delay: 0.2,
+                  },
+                }}
+              >
                 <Link
                   style={linkStyles}
                   href='https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
@@ -73,7 +83,17 @@ const Contacts: NextPage = () => {
                 </Link>
               </motion.div>
 
-              <div>
+              <motion.div
+                animate={{
+                  opacity: [0, 1],
+                  y: [-800, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeIn",
+                    delay: 0.3,
+                  },
+                }}
+              >
                 <Link style={linkStyles} href='mailto:emil.lipskij@gmail.com'>
                   <Image
                     src='/images/mail.svg'
@@ -82,9 +102,19 @@ const Contacts: NextPage = () => {
                     alt='mail'
                   />
                 </Link>
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                animate={{
+                  opacity: [0, 1],
+                  y: [800, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeIn",
+                    delay: 0.4,
+                  },
+                }}
+              >
                 <Link
                   style={linkStyles}
                   rel='noopener noreferrer'
@@ -99,9 +129,19 @@ const Contacts: NextPage = () => {
                     alt='github'
                   />
                 </Link>
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                animate={{
+                  opacity: [0, 1],
+                  x: [800, 0],
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeIn",
+                    delay: 0.5,
+                  },
+                }}
+              >
                 <Link style={linkStyles} href='tel:+370 625 24 354'>
                   <Image
                     src='/images/phone.svg'
@@ -110,7 +150,7 @@ const Contacts: NextPage = () => {
                     alt='phone'
                   />
                 </Link>
-              </div>
+              </motion.div>
             </div>
             <div className={styles.container}>
               <form
