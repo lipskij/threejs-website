@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Work.module.css";
-import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
@@ -33,25 +32,17 @@ const Work: NextPage = () => {
       <h2>WORK</h2>
       <section className={styles.work}>
         {projects.map((i) => (
-          <div key={i.href} className={ loaded ? styles.gallery : ''}>
-            <AnimatePresence>
-              <motion.div
-                key='image'
-                initial={{ x: -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-              >
-                <Link href={i.href}>
-                  <Image
-                    src={i.src}
-                    alt='project-images'
-                    width={400}
-                    height={200}
-                    quality={100}
-                    onLoadingComplete={() => setLoaded(true)}
-                  />
-                </Link>
-              </motion.div>
-            </AnimatePresence>
+          <div key={i.href} className={loaded ? styles.gallery : ""}>
+            <Link href={i.href}>
+              <Image
+                src={i.src}
+                alt='project-images'
+                width={400}
+                height={200}
+                quality={100}
+                onLoadingComplete={() => setLoaded(true)}
+              />
+            </Link>
 
             <p>{i.text}</p>
             <div className={styles.lines}></div>
