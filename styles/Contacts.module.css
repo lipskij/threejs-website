@@ -17,6 +17,7 @@
 .cantactList {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin: 0 auto;
   margin-bottom: 3rem;
 }

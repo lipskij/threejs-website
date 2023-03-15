@@ -37,20 +37,9 @@ const Work: NextPage = () => {
             <AnimatePresence>
               <motion.div
                 key='image'
-                initial={{ x: 300, opacity: 0 }}
+                initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                // animate={
-                //   loaded
-                //     ? {
-                //         x: [-50, 0],
-                //         transition: { duration: 0.5 },
-                //         opacity: [0, 1],
-                //       }
-                //     : {}
-                // }
               >
-                {!loaded && <p>Loading...</p>}
                 <Link href={i.href}>
                   <Image
                     src={i.src}
