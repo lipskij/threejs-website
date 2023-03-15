@@ -33,7 +33,7 @@ const Work: NextPage = () => {
       <h2>WORK</h2>
       <section className={styles.work}>
         {projects.map((i) => (
-          <div key={i.href} className={styles.gallery}>
+          <div key={i.href} className={ loaded ? styles.gallery : ''}>
             <AnimatePresence>
               <motion.div
                 key='image'
