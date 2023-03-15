@@ -45,20 +45,17 @@ const Work: NextPage = () => {
                   : {}
               }
             >
-              {!loaded ? (
-                "Loading..."
-              ) : (
-                <Link href={i.href}>
-                  <Image
-                    src={i.src}
-                    alt='project-images'
-                    width={400}
-                    height={200}
-                    quality={100}
-                    onLoadingComplete={() => setLoaded(true)}
-                  />
-                </Link>
-              )}
+              {!loaded && <p>Loading...</p>}
+              <Link href={i.href}>
+                <Image
+                  src={i.src}
+                  alt='project-images'
+                  width={400}
+                  height={200}
+                  quality={100}
+                  onLoadingComplete={() => setLoaded(true)}
+                />
+              </Link>
             </motion.div>
 
             <p>{i.text}</p>
