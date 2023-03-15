@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Work.module.css";
+import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
@@ -25,42 +26,69 @@ const projects = [
 // add work from past job
 
 const Work: NextPage = () => {
-  const [loaded, setLoaded] = React.useState(false);
-
   return (
     <div className={styles.main}>
-      <h2>WORK</h2>
-      <section className={styles.work}>
-        {projects.map((i) => (
-          <div key={i.href} className={loaded ? styles.gallery : ""}>
-            <Link href={i.href}>
-              <Image
-                src={i.src}
-                alt='project-images'
-                width={400}
-                height={200}
-                quality={100}
-                onLoadingComplete={() => setLoaded(true)}
-              />
-            </Link>
+      <AnimatePresence>
+        <motion.div
+          key='contacts'
+          initial='pageInitial'
+          animate='pageAnimate'
+          exit='pageExit'
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+              },
+            },
+            pageExit: {
+              opacity: 0,
+              transition: {
+                duration: 0.2,
+              },
+            },
+          }}
+        >
+          <h2>WORK</h2>
+          <section className={styles.work}>
+            {projects.map((i) => (
+              <div key={i.href} className={styles.gallery}>
+                <Link href={i.href}>
+                  <Image
+                    src={i.src}
+                    alt='project-images'
+                    width={400}
+                    height={200}
+                    quality={100}
+                  />
+                </Link>
 
-            <p>{i.text}</p>
-            <div className={styles.lines}></div>
-          </div>
-        ))}
-        <div className={styles.github}>
-          <h2>To find more projects visit</h2>
-          <Link
-            rel='noopener noreferrer'
-            aria-label='github-link'
-            href='https://github.com/lipskij'
-            target='_blank'
-            className={styles.gitBtn}
-          >
-            GitHub
-          </Link>
-        </div>
-      </section>
+                <p>{i.text}</p>
+                <div className={styles.lines}></div>
+              </div>
+            ))}
+            <div className={styles.github}>
+              <h2>To find more projects visit</h2>
+              <Link
+                rel='noopener noreferrer'
+                aria-label='github-link'
+                href='https://github.com/lipskij'
+                target='_blank'
+                className={styles.gitBtn}
+              >
+                GitHub
+              </Link>
+            </div>
+          </section>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
