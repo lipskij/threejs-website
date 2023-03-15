@@ -2,7 +2,7 @@
   font-size: 4rem;
   font-weight: 200;
   color: var(--text-color);
-  margin: 3rem 0 3rem 0;
+  margin: 5rem 0 5rem 0;
   text-align: center;
 }
 
@@ -107,7 +107,7 @@
 
 @media screen and (max-width: 480px) {
   .main {
-    padding-top: 10rem;
+    padding-top: 5rem;
   }
   .contacts {
     width: 100%;
@@ -116,5 +116,9 @@
   }
   .container {
     width: 90vw;
+  }
+  .main h2 {
+    margin: 2rem 0 2rem 0;
+    font-size: 2rem;
   }
 }

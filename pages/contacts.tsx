@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { NextPage } from "next/types";
 import React, { useEffect, useState } from "react";

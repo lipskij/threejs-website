@@ -1,5 +1,7 @@
 import "../styles/globals.css";
-
+import '../styles/Work.module.css'
+import '../styles/Home.module.css'
+import '../styles/Contacts.module.css'
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
@@ -20,8 +22,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </Head>
       <Nav />
       <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
+        // exitBeforeEnter
+        // onExitComplete={() => window.scrollTo(0, 0)}
       >
         <motion.div
           key={router.route}
@@ -39,14 +41,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             pageAnimate: {
               opacity: 1,
               transition: {
-                duration: 0.3,
+                duration: 0.5,
               },
             },
             pageExit: {
               opacity: 0,
-              transform: "translateY(-100%)",
+              transform: "translateY(-10%)",
               transition: {
-                duration: 0.3,
+                duration: 0.2,
               },
             },
           }}
