@@ -7,6 +7,16 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
+    href: "https://balthaus.eu/en/",
+    src: "/images/balthaus.webp",
+    text: "Creating new features, managing client turnover, invoices and payments. Using GraphQL and React.",
+  },
+  {
+    href: "https://experimentica.com/",
+    src: "/images/experimentica.webp",
+    text: "React and Canvas are utilized in medical technology to identify early stages of eye illness, enabling medical professionals to visualize and analyze digital images of the eye more effectively for quicker and more accurate diagnoses.",
+  },
+  {
     href: "https://skidoc.fr/",
     src: "/images/skidoc.webp",
     text: "Creating internal stock management system using NoSQL, MeteorJs and React. Using AWS and working with CI/CD.",
@@ -60,7 +70,11 @@ const Work: NextPage = () => {
           <section className={styles.work}>
             {projects.map((i) => (
               <div key={i.href} className={styles.gallery}>
-                <Link href={i.href}>
+                <Link
+                  href={i.href}
+                  target='_blank'
+                  style={{ width: "400px", height: "200px" }}
+                >
                   <Image
                     src={i.src}
                     alt='project-images'
