@@ -9,7 +9,7 @@ const projects = [
   {
     href: "https://balthaus.eu/en/",
     src: "/images/balthaus.webp",
-    text: "Creating new features, managing client turnover, invoices and payments. Using GraphQL and React.",
+    text: "Creating new features, managing client turnover, invoices and payments. By leveraging GraphQL's powerful querying capabilities and React's flexibility and ease of use, businesses can enhance their workflow and streamline their operations to boost their overall efficiency and productivity.",
   },
   {
     href: "https://experimentica.com/",
