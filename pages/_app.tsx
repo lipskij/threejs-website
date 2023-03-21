@@ -5,7 +5,7 @@ import type { AppProps } from "next/app";
 import Nav from "../components/Nav";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const url = `http://localhost:3000${router.route}`;
+  // const url = `http://localhost:3000${router.route}`;
 
   return (
     <>
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <link rel='icon' href='/favicon2.ico' />
       </Head>
       <Nav />
-      <Component {...pageProps} canonical={url} key={url} />
+      <Component {...pageProps} canonical={router.route} key={router.route} />
       <footer>
         <p>Made by Emil Lipskij 2022</p>
       </footer>
