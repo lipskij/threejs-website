@@ -5,7 +5,7 @@ import Image from "next/image";
 import BackToTop from "../components/BackToTop";
 import { useEffect } from "react";
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home: NextPage = () => {
   const aboutRef = React.useRef<HTMLElement>(null);
@@ -38,57 +38,92 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <main className={styles.main}>
-        <section className={styles.home}>
-          <div className={styles.homeText}>
-            <h1>
-              Hi, I&apos;m <span className={styles.name}>Emil</span>.
-            </h1>
-            <h2>I&apos;m a front-end web developer from Vilnius, Lithuania.</h2>
-            <Link className={styles.button} href='/contacts'>
-              Contacts
-            </Link>
-          </div>
-          <div className={styles.lineDiv}>
-            {Array.from(Array(50).keys()).map((i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0, 1],
-                  transition: { duration: 1 },
-                }}
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.2 },
-                  boxShadow: "0px 0px 20px #aa3bff",
-                }}
-                className={styles.line}
-              />
-            ))}
-          </div>
-        </section>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key='home'
+          initial='pageInitial'
+          animate='pageAnimate'
+          exit='pageExit'
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageExit: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
+          <main className={styles.main}>
+            <section className={styles.home}>
+              <div className={styles.homeText}>
+                <h1>
+                  Hi, I&apos;m <span className={styles.name}>Emil</span>.
+                </h1>
+                <h2>
+                  I&apos;m a front-end web developer from Vilnius, Lithuania.
+                </h2>
+                <Link className={styles.button} href='/contacts'>
+                  Contacts
+                </Link>
+              </div>
+              <div className={styles.lineDiv}>
+                {Array.from(Array(50).keys()).map((i) => (
+                  <motion.div
+                    key={i}
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0, 1],
+                      transition: { duration: 1 },
+                    }}
+                    whileHover={{
+                      scale: 1.2,
+                      transition: { duration: 0.2 },
+                      boxShadow: "0px 0px 20px #aa3bff",
+                    }}
+                    className={styles.line}
+                  />
+                ))}
+              </div>
+            </section>
 
-        <section className={styles.about} id='about' ref={aboutRef}>
-          <div>
-            <p className={styles.aboutTitle}>ABOUT</p>
-            <div className={styles.aboutText}>
-              <p>
-                I&apos;m a self tought Developer from Vilnius Lithuania.
-                <br />
-                Finished Front End Masters online courses.
-                <br />
-                I enjoy creating responsive, fast-loading, dynamic user
-                experiences.
-                <br />
-                Previously worked with circus troupe as an acrobat and juggler.
-                Eager to learn new technologies and to create new things.
-              </p>
-            </div>
-          </div>
-        </section>
-        <BackToTop />
-      </main>
+            <section className={styles.about} id='about' ref={aboutRef}>
+              <div>
+                <p className={styles.aboutTitle}>ABOUT</p>
+                <div className={styles.aboutText}>
+                  <p>
+                    I&apos;m a self tought Developer from Vilnius Lithuania.
+                    <br />
+                    Finished Front End Masters online courses.
+                    <br />
+                    I enjoy creating responsive, fast-loading, dynamic user
+                    experiences.
+                    <br />
+                    Previously worked with circus troupe as an acrobat and
+                    juggler. Eager to learn new technologies and to create new
+                    things.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <BackToTop />
+          </main>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

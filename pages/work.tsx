@@ -9,6 +9,7 @@ import experimentica from "../public/images/experimentica.webp";
 import skidoc from "../public/images/skidoc.webp";
 import easy from "../public/images/easy2.webp";
 import send from "../public/images/send-euro.webp";
+import { AnimatePresence, motion } from "framer-motion";
 
 const projects = [
   {
@@ -63,45 +64,77 @@ const Work: NextPage = () => {
 
   return (
     <div className={styles.main}>
-      <h2>WORK</h2>
-      <section className={styles.work}>
-        {projects.map((i) => (
-          <div key={i.href} className={styles.gallery}>
-            <Link
-              href={i.href}
-              target='_blank'
-              rel='noopener noreferrer'
-              ref={(el) => images.current.push(el)}
-              className={styles.image}
-            >
-              <Image
-                src={i.src}
-                alt='project-images'
-                width={400}
-                height={200}
-                quality={quality}
-                loading='eager'
-                placeholder='blur'
-                onLoadingComplete={() => setQuality(100)}
-              />
-            </Link>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key='work'
+          initial='pageInitial'
+          animate='pageAnimate'
+          exit='pageExit'
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageExit: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
+          <h2>WORK</h2>
+          <section className={styles.work}>
+            {projects.map((i) => (
+              <div key={i.href} className={styles.gallery}>
+                <Link
+                  href={i.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  ref={(el) => images.current.push(el)}
+                  className={styles.image}
+                >
+                  <Image
+                    src={i.src}
+                    alt='project-images'
+                    width={400}
+                    height={200}
+                    quality={quality}
+                    loading='eager'
+                    placeholder='blur'
+                    onLoadingComplete={() => setQuality(100)}
+                  />
+                </Link>
 
-            <p>{i.text}</p>
-          </div>
-        ))}
-        <div className={styles.github}>
-          <h2>To find more projects visit</h2>
-          <Link
-            rel='noopener noreferrer'
-            aria-label='github-link'
-            href='https://github.com/lipskij'
-            target='_blank'
-            className={styles.gitBtn}
-          >
-            GitHub
-          </Link>
-        </div>
-      </section>
+                <p>{i.text}</p>
+              </div>
+            ))}
+            <div className={styles.github}>
+              <h2>To find more projects visit</h2>
+              <Link
+                rel='noopener noreferrer'
+                aria-label='github-link'
+                href='https://github.com/lipskij'
+                target='_blank'
+                className={styles.gitBtn}
+              >
+                GitHub
+              </Link>
+            </div>
+          </section>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

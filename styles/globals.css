@@ -28,7 +28,9 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 2;
 }
 
 nav ul {
@@ -115,7 +117,7 @@ footer {
 
   nav {
     position: fixed;
-    background-color: var(--primary-color);
+    backdrop-filter: blur(10px);
   }
 
   nav ul {

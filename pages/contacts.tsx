@@ -26,108 +26,145 @@ const Contacts: NextPage = () => {
 
   return (
     <main className={styles.main}>
-      <h2>CONTACTS</h2>
-      <section className={styles.contacts}>
-        <div className={styles.cantactList}>
-          <div>
-            <Link
-              style={linkStyles}
-              href='https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <Image
-                src='/images/linkedin.svg'
-                width={50}
-                height={50}
-                alt='linkedin'
-              />
-            </Link>
-          </div>
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key='contacts'
+          initial='pageInitial'
+          animate='pageAnimate'
+          exit='pageExit'
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageExit: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
+          <h2>CONTACTS</h2>
+          <section className={styles.contacts}>
+            <div className={styles.cantactList}>
+              <div>
+                <Link
+                  style={linkStyles}
+                  href='https:/www.linkedin.com/in/emil-lipskij-6920831b2/'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  <Image
+                    src='/images/linkedin.svg'
+                    width={50}
+                    height={50}
+                    alt='linkedin'
+                  />
+                </Link>
+              </div>
 
-          <div>
-            <Link style={linkStyles} href='mailto:emil.lipskij@gmail.com'>
-              <Image src='/images/mail.svg' width={50} height={50} alt='mail' />
-            </Link>
-          </div>
+              <div>
+                <Link style={linkStyles} href='mailto:emil.lipskij@gmail.com'>
+                  <Image
+                    src='/images/mail.svg'
+                    width={50}
+                    height={50}
+                    alt='mail'
+                  />
+                </Link>
+              </div>
 
-          <div>
-            <Link
-              style={linkStyles}
-              rel='noopener noreferrer'
-              aria-label='github-link'
-              href='https://github.com/lipskij'
-              target='_blank'
-            >
-              <Image
-                src='/images/github.svg'
-                width={50}
-                height={50}
-                alt='github'
-              />
-            </Link>
-          </div>
+              <div>
+                <Link
+                  style={linkStyles}
+                  rel='noopener noreferrer'
+                  aria-label='github-link'
+                  href='https://github.com/lipskij'
+                  target='_blank'
+                >
+                  <Image
+                    src='/images/github.svg'
+                    width={50}
+                    height={50}
+                    alt='github'
+                  />
+                </Link>
+              </div>
 
-          <div>
-            <Link style={linkStyles} href='tel:+370 625 24 354'>
-              <Image
-                src='/images/phone.svg'
-                width={55}
-                height={55}
-                alt='phone'
-              />
-            </Link>
-          </div>
-        </div>
-        <div className={styles.container}>
-          <form
-            name='contact'
-            method='POST'
-            data-netlify='true'
-            action='/success'
-          >
-            <input type='hidden' name='form-name' value='contact' />
-            <input
-              type='text'
-              className='name'
-              name='name'
-              placeholder='Your name..'
-              aria-label='Your name..'
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-            <input
-              type='text'
-              className='email'
-              name='email'
-              placeholder='Your email..'
-              aria-label='Your email..'
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+              <div>
+                <Link style={linkStyles} href='tel:+370 625 24 354'>
+                  <Image
+                    src='/images/phone.svg'
+                    width={55}
+                    height={55}
+                    alt='phone'
+                  />
+                </Link>
+              </div>
+            </div>
+            <div className={styles.container}>
+              <form
+                name='contact'
+                method='POST'
+                data-netlify='true'
+                action='/success'
+              >
+                <input type='hidden' name='form-name' value='contact' />
+                <input
+                  type='text'
+                  className='name'
+                  name='name'
+                  placeholder='Your name..'
+                  aria-label='Your name..'
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                />
+                <input
+                  type='text'
+                  className='email'
+                  name='email'
+                  placeholder='Your email..'
+                  aria-label='Your email..'
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
 
-            <textarea
-              className='message'
-              name='message'
-              placeholder='Leave me a message..'
-              required
-              rows={4}
-              aria-label='Leave me a message..'
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            ></textarea>
+                <textarea
+                  className='message'
+                  name='message'
+                  placeholder='Leave me a message..'
+                  required
+                  rows={4}
+                  aria-label='Leave me a message..'
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
 
-            <button
-              type='submit'
-              className={styles.contactButton}
-              disabled={disabled}
-            >
-              SEND
-            </button>
-          </form>
-        </div>
-      </section>
+                <button
+                  type='submit'
+                  className={styles.contactButton}
+                  disabled={disabled}
+                >
+                  SEND
+                </button>
+              </form>
+            </div>
+          </section>
+        </motion.div>
+      </AnimatePresence>
     </main>
   );
 };
