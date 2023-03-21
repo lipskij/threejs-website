@@ -91,6 +91,15 @@
   height: 90vh;
   width: 90vw;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(0);
 }
 
 .aboutTitle {

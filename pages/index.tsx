@@ -8,6 +8,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
+  const aboutRef = React.useRef<HTMLElement>(null);
   const hash = typeof window !== "undefined" ? window.location.hash : "";
 
   useEffect(() => {
@@ -16,6 +17,24 @@ const Home: NextPage = () => {
       about?.scrollIntoView({ behavior: "smooth" });
     }
   }, [hash]);
+
+  // intersection observer for about section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.show);
+          } else {
+            entry.target.classList.remove(styles.show);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(aboutRef.current as Element);
+  }, []);
 
   return (
     <div>
@@ -50,7 +69,7 @@ const Home: NextPage = () => {
           </div>
         </section>
 
-        <section className={styles.about} id='about'>
+        <section className={styles.about} id='about' ref={aboutRef}>
           <div>
             <p className={styles.aboutTitle}>ABOUT</p>
             <div className={styles.aboutText}>

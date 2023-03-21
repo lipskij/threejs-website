@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import Nav from "../components/Nav";
+import { AnimatePresence, motion } from "framer-motion";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const url = `http://localhost:3000${router.route}`;
@@ -18,7 +19,39 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <link rel='icon' href='/favicon2.ico' />
       </Head>
       <Nav />
-      <Component {...pageProps} canonical={url} key={url} />
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.route}
+          initial='pageInitial'
+          animate='pageAnimate'
+          exit='pageExit'
+          variants={{
+            pageInitial: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageAnimate: {
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+            pageExit: {
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            },
+          }}
+        >
+          <Component {...pageProps} canonical={url} key={url} />
+        </motion.div>
+      </AnimatePresence>
       <footer>
         <p>Made by Emil Lipskij 2022</p>
       </footer>
