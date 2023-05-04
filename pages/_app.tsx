@@ -1,11 +1,9 @@
 import "../styles/globals.css";
-
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import Nav from "../components/Nav";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  // const url = `http://localhost:3000${router.route}`;
 
   return (
     <>
